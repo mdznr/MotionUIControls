@@ -1,0 +1,486 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C97FB6B018AD7BFC00800FA9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C97FB6AF18AD7BFC00800FA9 /* Foundation.framework */; };
+		C97FB6B218AD7BFC00800FA9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C97FB6B118AD7BFC00800FA9 /* CoreGraphics.framework */; };
+		C97FB6B418AD7BFC00800FA9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C97FB6B318AD7BFC00800FA9 /* UIKit.framework */; };
+		C97FB6BA18AD7BFC00800FA9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C97FB6B818AD7BFC00800FA9 /* InfoPlist.strings */; };
+		C97FB6BC18AD7BFC00800FA9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C97FB6BB18AD7BFC00800FA9 /* main.m */; };
+		C97FB6C018AD7BFC00800FA9 /* MTZAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C97FB6BF18AD7BFC00800FA9 /* MTZAppDelegate.m */; };
+		C97FB6C318AD7BFC00800FA9 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C97FB6C118AD7BFC00800FA9 /* Main_iPhone.storyboard */; };
+		C97FB6C618AD7BFC00800FA9 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C97FB6C418AD7BFC00800FA9 /* Main_iPad.storyboard */; };
+		C97FB6C918AD7BFC00800FA9 /* MTZViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C97FB6C818AD7BFC00800FA9 /* MTZViewController.m */; };
+		C97FB6CB18AD7BFC00800FA9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C97FB6CA18AD7BFC00800FA9 /* Images.xcassets */; };
+		C97FB6D218AD7BFC00800FA9 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C97FB6D118AD7BFC00800FA9 /* XCTest.framework */; };
+		C97FB6D318AD7BFC00800FA9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C97FB6AF18AD7BFC00800FA9 /* Foundation.framework */; };
+		C97FB6D418AD7BFC00800FA9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C97FB6B318AD7BFC00800FA9 /* UIKit.framework */; };
+		C97FB6DC18AD7BFC00800FA9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C97FB6DA18AD7BFC00800FA9 /* InfoPlist.strings */; };
+		C97FB6DE18AD7BFC00800FA9 /* MotionUIControlsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C97FB6DD18AD7BFC00800FA9 /* MotionUIControlsTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C97FB6D518AD7BFC00800FA9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C97FB6A418AD7BFC00800FA9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C97FB6AB18AD7BFC00800FA9;
+			remoteInfo = MotionUIControls;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C97FB6AC18AD7BFC00800FA9 /* MotionUIControls.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MotionUIControls.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C97FB6AF18AD7BFC00800FA9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C97FB6B118AD7BFC00800FA9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C97FB6B318AD7BFC00800FA9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C97FB6B718AD7BFC00800FA9 /* MotionUIControls-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MotionUIControls-Info.plist"; sourceTree = "<group>"; };
+		C97FB6B918AD7BFC00800FA9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C97FB6BB18AD7BFC00800FA9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C97FB6BD18AD7BFC00800FA9 /* MotionUIControls-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MotionUIControls-Prefix.pch"; sourceTree = "<group>"; };
+		C97FB6BE18AD7BFC00800FA9 /* MTZAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTZAppDelegate.h; sourceTree = "<group>"; };
+		C97FB6BF18AD7BFC00800FA9 /* MTZAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTZAppDelegate.m; sourceTree = "<group>"; };
+		C97FB6C218AD7BFC00800FA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		C97FB6C518AD7BFC00800FA9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		C97FB6C718AD7BFC00800FA9 /* MTZViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTZViewController.h; sourceTree = "<group>"; };
+		C97FB6C818AD7BFC00800FA9 /* MTZViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTZViewController.m; sourceTree = "<group>"; };
+		C97FB6CA18AD7BFC00800FA9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		C97FB6D018AD7BFC00800FA9 /* MotionUIControlsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MotionUIControlsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C97FB6D118AD7BFC00800FA9 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		C97FB6D918AD7BFC00800FA9 /* MotionUIControlsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MotionUIControlsTests-Info.plist"; sourceTree = "<group>"; };
+		C97FB6DB18AD7BFC00800FA9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C97FB6DD18AD7BFC00800FA9 /* MotionUIControlsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MotionUIControlsTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C97FB6A918AD7BFC00800FA9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C97FB6B218AD7BFC00800FA9 /* CoreGraphics.framework in Frameworks */,
+				C97FB6B418AD7BFC00800FA9 /* UIKit.framework in Frameworks */,
+				C97FB6B018AD7BFC00800FA9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C97FB6CD18AD7BFC00800FA9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C97FB6D218AD7BFC00800FA9 /* XCTest.framework in Frameworks */,
+				C97FB6D418AD7BFC00800FA9 /* UIKit.framework in Frameworks */,
+				C97FB6D318AD7BFC00800FA9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C97FB6A318AD7BFC00800FA9 = {
+			isa = PBXGroup;
+			children = (
+				C97FB6B518AD7BFC00800FA9 /* MotionUIControls */,
+				C97FB6D718AD7BFC00800FA9 /* MotionUIControlsTests */,
+				C97FB6AE18AD7BFC00800FA9 /* Frameworks */,
+				C97FB6AD18AD7BFC00800FA9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C97FB6AD18AD7BFC00800FA9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C97FB6AC18AD7BFC00800FA9 /* MotionUIControls.app */,
+				C97FB6D018AD7BFC00800FA9 /* MotionUIControlsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C97FB6AE18AD7BFC00800FA9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C97FB6AF18AD7BFC00800FA9 /* Foundation.framework */,
+				C97FB6B118AD7BFC00800FA9 /* CoreGraphics.framework */,
+				C97FB6B318AD7BFC00800FA9 /* UIKit.framework */,
+				C97FB6D118AD7BFC00800FA9 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C97FB6B518AD7BFC00800FA9 /* MotionUIControls */ = {
+			isa = PBXGroup;
+			children = (
+				C97FB6BE18AD7BFC00800FA9 /* MTZAppDelegate.h */,
+				C97FB6BF18AD7BFC00800FA9 /* MTZAppDelegate.m */,
+				C97FB6C118AD7BFC00800FA9 /* Main_iPhone.storyboard */,
+				C97FB6C418AD7BFC00800FA9 /* Main_iPad.storyboard */,
+				C97FB6C718AD7BFC00800FA9 /* MTZViewController.h */,
+				C97FB6C818AD7BFC00800FA9 /* MTZViewController.m */,
+				C97FB6CA18AD7BFC00800FA9 /* Images.xcassets */,
+				C97FB6B618AD7BFC00800FA9 /* Supporting Files */,
+			);
+			path = MotionUIControls;
+			sourceTree = "<group>";
+		};
+		C97FB6B618AD7BFC00800FA9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C97FB6B718AD7BFC00800FA9 /* MotionUIControls-Info.plist */,
+				C97FB6B818AD7BFC00800FA9 /* InfoPlist.strings */,
+				C97FB6BB18AD7BFC00800FA9 /* main.m */,
+				C97FB6BD18AD7BFC00800FA9 /* MotionUIControls-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C97FB6D718AD7BFC00800FA9 /* MotionUIControlsTests */ = {
+			isa = PBXGroup;
+			children = (
+				C97FB6DD18AD7BFC00800FA9 /* MotionUIControlsTests.m */,
+				C97FB6D818AD7BFC00800FA9 /* Supporting Files */,
+			);
+			path = MotionUIControlsTests;
+			sourceTree = "<group>";
+		};
+		C97FB6D818AD7BFC00800FA9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C97FB6D918AD7BFC00800FA9 /* MotionUIControlsTests-Info.plist */,
+				C97FB6DA18AD7BFC00800FA9 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C97FB6AB18AD7BFC00800FA9 /* MotionUIControls */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C97FB6E118AD7BFC00800FA9 /* Build configuration list for PBXNativeTarget "MotionUIControls" */;
+			buildPhases = (
+				C97FB6A818AD7BFC00800FA9 /* Sources */,
+				C97FB6A918AD7BFC00800FA9 /* Frameworks */,
+				C97FB6AA18AD7BFC00800FA9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MotionUIControls;
+			productName = MotionUIControls;
+			productReference = C97FB6AC18AD7BFC00800FA9 /* MotionUIControls.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C97FB6CF18AD7BFC00800FA9 /* MotionUIControlsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C97FB6E418AD7BFC00800FA9 /* Build configuration list for PBXNativeTarget "MotionUIControlsTests" */;
+			buildPhases = (
+				C97FB6CC18AD7BFC00800FA9 /* Sources */,
+				C97FB6CD18AD7BFC00800FA9 /* Frameworks */,
+				C97FB6CE18AD7BFC00800FA9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C97FB6D618AD7BFC00800FA9 /* PBXTargetDependency */,
+			);
+			name = MotionUIControlsTests;
+			productName = MotionUIControlsTests;
+			productReference = C97FB6D018AD7BFC00800FA9 /* MotionUIControlsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C97FB6A418AD7BFC00800FA9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = MTZ;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Matt Zanchelli";
+				TargetAttributes = {
+					C97FB6CF18AD7BFC00800FA9 = {
+						TestTargetID = C97FB6AB18AD7BFC00800FA9;
+					};
+				};
+			};
+			buildConfigurationList = C97FB6A718AD7BFC00800FA9 /* Build configuration list for PBXProject "MotionUIControls" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C97FB6A318AD7BFC00800FA9;
+			productRefGroup = C97FB6AD18AD7BFC00800FA9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C97FB6AB18AD7BFC00800FA9 /* MotionUIControls */,
+				C97FB6CF18AD7BFC00800FA9 /* MotionUIControlsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C97FB6AA18AD7BFC00800FA9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C97FB6C618AD7BFC00800FA9 /* Main_iPad.storyboard in Resources */,
+				C97FB6CB18AD7BFC00800FA9 /* Images.xcassets in Resources */,
+				C97FB6C318AD7BFC00800FA9 /* Main_iPhone.storyboard in Resources */,
+				C97FB6BA18AD7BFC00800FA9 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C97FB6CE18AD7BFC00800FA9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C97FB6DC18AD7BFC00800FA9 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C97FB6A818AD7BFC00800FA9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C97FB6C018AD7BFC00800FA9 /* MTZAppDelegate.m in Sources */,
+				C97FB6BC18AD7BFC00800FA9 /* main.m in Sources */,
+				C97FB6C918AD7BFC00800FA9 /* MTZViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C97FB6CC18AD7BFC00800FA9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C97FB6DE18AD7BFC00800FA9 /* MotionUIControlsTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C97FB6D618AD7BFC00800FA9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C97FB6AB18AD7BFC00800FA9 /* MotionUIControls */;
+			targetProxy = C97FB6D518AD7BFC00800FA9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C97FB6B818AD7BFC00800FA9 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C97FB6B918AD7BFC00800FA9 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C97FB6C118AD7BFC00800FA9 /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C97FB6C218AD7BFC00800FA9 /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		C97FB6C418AD7BFC00800FA9 /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C97FB6C518AD7BFC00800FA9 /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		C97FB6DA18AD7BFC00800FA9 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C97FB6DB18AD7BFC00800FA9 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C97FB6DF18AD7BFC00800FA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C97FB6E018AD7BFC00800FA9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C97FB6E218AD7BFC00800FA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MotionUIControls/MotionUIControls-Prefix.pch";
+				INFOPLIST_FILE = "MotionUIControls/MotionUIControls-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C97FB6E318AD7BFC00800FA9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MotionUIControls/MotionUIControls-Prefix.pch";
+				INFOPLIST_FILE = "MotionUIControls/MotionUIControls-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		C97FB6E518AD7BFC00800FA9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MotionUIControls.app/MotionUIControls";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MotionUIControls/MotionUIControls-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "MotionUIControlsTests/MotionUIControlsTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		C97FB6E618AD7BFC00800FA9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MotionUIControls.app/MotionUIControls";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MotionUIControls/MotionUIControls-Prefix.pch";
+				INFOPLIST_FILE = "MotionUIControlsTests/MotionUIControlsTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C97FB6A718AD7BFC00800FA9 /* Build configuration list for PBXProject "MotionUIControls" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C97FB6DF18AD7BFC00800FA9 /* Debug */,
+				C97FB6E018AD7BFC00800FA9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C97FB6E118AD7BFC00800FA9 /* Build configuration list for PBXNativeTarget "MotionUIControls" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C97FB6E218AD7BFC00800FA9 /* Debug */,
+				C97FB6E318AD7BFC00800FA9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C97FB6E418AD7BFC00800FA9 /* Build configuration list for PBXNativeTarget "MotionUIControlsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C97FB6E518AD7BFC00800FA9 /* Debug */,
+				C97FB6E618AD7BFC00800FA9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C97FB6A418AD7BFC00800FA9 /* Project object */;
+}
