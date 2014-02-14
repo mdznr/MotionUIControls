@@ -22,6 +22,7 @@
 		C97FB6D418AD7BFC00800FA9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C97FB6B318AD7BFC00800FA9 /* UIKit.framework */; };
 		C97FB6DC18AD7BFC00800FA9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C97FB6DA18AD7BFC00800FA9 /* InfoPlist.strings */; };
 		C97FB6DE18AD7BFC00800FA9 /* MotionUIControlsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C97FB6DD18AD7BFC00800FA9 /* MotionUIControlsTests.m */; };
+		C97FB6E918AD7C5B00800FA9 /* MTZSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = C97FB6E818AD7C5B00800FA9 /* MTZSlider.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,8 @@
 		C97FB6D918AD7BFC00800FA9 /* MotionUIControlsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MotionUIControlsTests-Info.plist"; sourceTree = "<group>"; };
 		C97FB6DB18AD7BFC00800FA9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C97FB6DD18AD7BFC00800FA9 /* MotionUIControlsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MotionUIControlsTests.m; sourceTree = "<group>"; };
+		C97FB6E718AD7C5B00800FA9 /* MTZSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTZSlider.h; sourceTree = "<group>"; };
+		C97FB6E818AD7C5B00800FA9 /* MTZSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTZSlider.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +123,8 @@
 				C97FB6C418AD7BFC00800FA9 /* Main_iPad.storyboard */,
 				C97FB6C718AD7BFC00800FA9 /* MTZViewController.h */,
 				C97FB6C818AD7BFC00800FA9 /* MTZViewController.m */,
+				C97FB6E718AD7C5B00800FA9 /* MTZSlider.h */,
+				C97FB6E818AD7C5B00800FA9 /* MTZSlider.m */,
 				C97FB6CA18AD7BFC00800FA9 /* Images.xcassets */,
 				C97FB6B618AD7BFC00800FA9 /* Supporting Files */,
 			);
@@ -254,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C97FB6E918AD7C5B00800FA9 /* MTZSlider.m in Sources */,
 				C97FB6C018AD7BFC00800FA9 /* MTZAppDelegate.m in Sources */,
 				C97FB6BC18AD7BFC00800FA9 /* main.m in Sources */,
 				C97FB6C918AD7BFC00800FA9 /* MTZViewController.m in Sources */,
@@ -471,6 +477,7 @@
 				C97FB6E318AD7BFC00800FA9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C97FB6E418AD7BFC00800FA9 /* Build configuration list for PBXNativeTarget "MotionUIControlsTests" */ = {
 			isa = XCConfigurationList;
@@ -479,6 +486,7 @@
 				C97FB6E618AD7BFC00800FA9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

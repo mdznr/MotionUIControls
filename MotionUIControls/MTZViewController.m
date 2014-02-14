@@ -7,6 +7,7 @@
 //
 
 #import "MTZViewController.h"
+#import "MTZSlider.h"
 
 @interface MTZViewController ()
 
