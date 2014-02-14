@@ -53,7 +53,7 @@
 
 - (void)_MTZSlider_setup
 {
-	// Begin observing thumb view.
+	// Begin observing thumb view. (Need to perform after delay, otherwise thumb view is uninitalized)
 	[self performSelector:@selector(setUpThumbViewMotionEffects) withObject:nil afterDelay:DBL_MIN];
 }
 
@@ -71,9 +71,11 @@
 
 #pragma mark - Properties
 
+static NSString *thumbViewKeyPath = @"_thumbViewNeue";
+
 - (UIView *)thumbView
 {
-	return (UIView *) [self valueForKeyPath:@"_thumbViewNeue"];
+	return (UIView *) [self valueForKeyPath:thumbViewKeyPath];
 }
 
 
@@ -87,16 +89,14 @@ static int thumbViewParallaxAbsoluteMax = 4;
 {
 #ifdef THUMB_VIEW_PARALLAX
 	// Horizontal motion
-	UIInterpolatingMotionEffect *horizontal =
-		[[UIInterpolatingMotionEffect alloc]
+	UIInterpolatingMotionEffect *horizontal = [[UIInterpolatingMotionEffect alloc]
 			 initWithKeyPath:@"center.x" type:UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis];
 	horizontal.minimumRelativeValue = @(-thumbViewParallaxAbsoluteMax);
 	horizontal.maximumRelativeValue = @(thumbViewParallaxAbsoluteMax);
 	[self.thumbView addMotionEffect:horizontal];
 	
 	// Vertical motion
-	UIInterpolatingMotionEffect *vertical =
-		[[UIInterpolatingMotionEffect alloc]
+	UIInterpolatingMotionEffect *vertical = [[UIInterpolatingMotionEffect alloc]
 			 initWithKeyPath:@"center.y" type:UIInterpolatingMotionEffectTypeTiltAlongVerticalAxis];
 	vertical.minimumRelativeValue = @(-thumbViewParallaxAbsoluteMax);
 	vertical.maximumRelativeValue = @(thumbViewParallaxAbsoluteMax);
@@ -104,6 +104,11 @@ static int thumbViewParallaxAbsoluteMax = 4;
 #endif
 	
 //	[self observeThumbViewFrame];
+}
+
+- (void)thumbViewFrameChanged
+{
+	NSLog(@"%@", NSStringFromCGRect(self.thumbView.frame));
 }
 
 
@@ -126,17 +131,11 @@ static void *ThumbViewFrameContext = &ThumbViewFrameContext;
 						change:(NSDictionary *)change
 					   context:(void *)context
 {
-	
 	if ( context == ThumbViewFrameContext ) {
 		if ( [keyPath isEqualToString:@"frame"] ) {
 			[self thumbViewFrameChanged];
 		}
 	}
-}
-
-- (void)thumbViewFrameChanged
-{
-	NSLog(@"%@", NSStringFromCGRect(self.thumbView.frame));
 }
 
 @end
