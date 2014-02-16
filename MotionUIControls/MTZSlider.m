@@ -17,6 +17,9 @@
 /// The thumb view.
 @property (strong, nonatomic, readonly) UIView *thumbView;
 
+/// The shadow view.
+@property (strong, nonatomic) UIImageView *shadowView;
+
 @end
 
 
@@ -28,7 +31,7 @@
 {
 	self = [super init];
 	if ( self ) {
-		[self _MTZSlider_setup];
+		[self _MTZSlider_setUp];
 	}
 	return self;
 }
@@ -37,7 +40,7 @@
 {
 	self = [super initWithCoder:aDecoder];
 	if ( self ) {
-		[self _MTZSlider_setup];
+		[self _MTZSlider_setUp];
 	}
 	return self;
 }
@@ -46,15 +49,23 @@
 {
 	self = [super initWithFrame:frame];
 	if ( self ) {
-		[self _MTZSlider_setup];
+		[self _MTZSlider_setUp];
 	}
 	return self;
 }
 
-- (void)_MTZSlider_setup
+- (void)_MTZSlider_setUp
 {
-	// Begin observing thumb view. (Need to perform after delay, otherwise thumb view is uninitalized)
-	[self performSelector:@selector(setUpThumbViewMotionEffects) withObject:nil afterDelay:DBL_MIN];
+	// Need to perform after delay, otherwise UISlider views are uninitialized.
+	[self performSelector:@selector(_MTZSlider_setUp_isNowReady) withObject:nil afterDelay:DBL_MIN];
+}
+
+- (void)_MTZSlider_setUp_isNowReady
+{
+	_shadowView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@""]];
+	_shadowView.center = self.thumbView.center;
+	
+	[self setUpThumbViewMotionEffects];
 }
 
 - (void)dealloc
@@ -82,7 +93,7 @@ static NSString *thumbViewKeyPath = @"_thumbViewNeue";
 #pragma mark - Motion Effects
 
 #ifdef THUMB_VIEW_PARALLAX
-static int thumbViewParallaxAbsoluteMax = 4;
+static int thumbViewParallaxAbsoluteMax = 40;
 #endif
 
 - (void)setUpThumbViewMotionEffects
@@ -90,17 +101,24 @@ static int thumbViewParallaxAbsoluteMax = 4;
 #ifdef THUMB_VIEW_PARALLAX
 	// Horizontal motion
 	UIInterpolatingMotionEffect *horizontal = [[UIInterpolatingMotionEffect alloc]
-			 initWithKeyPath:@"center.x" type:UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis];
-	horizontal.minimumRelativeValue = @(-thumbViewParallaxAbsoluteMax);
-	horizontal.maximumRelativeValue = @(thumbViewParallaxAbsoluteMax);
+			 initWithKeyPath:@"layer.transform" type:UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis];
+//	horizontal.minimumRelativeValue = [NSValue valueWithCGAffineTransform:CGAffineTransformMakeTranslation(-thumbViewParallaxAbsoluteMax, 0)];
+//	horizontal.maximumRelativeValue = [NSValue valueWithCGAffineTransform:CGAffineTransformMakeTranslation(thumbViewParallaxAbsoluteMax, 0)];
+	horizontal.minimumRelativeValue = [NSValue valueWithCATransform3D:CATransform3DMakeTranslation(-thumbViewParallaxAbsoluteMax, 0, 0)];
+	horizontal.maximumRelativeValue = [NSValue valueWithCATransform3D:CATransform3DMakeTranslation(thumbViewParallaxAbsoluteMax, 0, 0)];
 	[self.thumbView addMotionEffect:horizontal];
 	
 	// Vertical motion
 	UIInterpolatingMotionEffect *vertical = [[UIInterpolatingMotionEffect alloc]
-			 initWithKeyPath:@"center.y" type:UIInterpolatingMotionEffectTypeTiltAlongVerticalAxis];
-	vertical.minimumRelativeValue = @(-thumbViewParallaxAbsoluteMax);
-	vertical.maximumRelativeValue = @(thumbViewParallaxAbsoluteMax);
+			 initWithKeyPath:@"layer.transform" type:UIInterpolatingMotionEffectTypeTiltAlongVerticalAxis];
+//	vertical.minimumRelativeValue = [NSValue valueWithCGAffineTransform:CGAffineTransformMakeTranslation(0, -thumbViewParallaxAbsoluteMax)];
+//	vertical.maximumRelativeValue = [NSValue valueWithCGAffineTransform:CGAffineTransformMakeTranslation(0, thumbViewParallaxAbsoluteMax)];
+	vertical.minimumRelativeValue = [NSValue valueWithCATransform3D:CATransform3DMakeTranslation(0, -thumbViewParallaxAbsoluteMax, 0)];
+	vertical.maximumRelativeValue = [NSValue valueWithCATransform3D:CATransform3DMakeTranslation(0, thumbViewParallaxAbsoluteMax, 0)];
 	[self.thumbView addMotionEffect:vertical];
+	
+	UIMotionEffectGroup *group = [[UIMotionEffectGroup alloc] init];
+	group.motionEffects = @[horizontal, vertical];
 #endif
 	
 //	[self observeThumbViewFrame];
