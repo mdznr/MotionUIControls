@@ -119,7 +119,13 @@ static NSString *thumbViewKeyPath = @"_thumbView";
 #pragma mark - Motion Effects
 
 #ifdef THUMB_VIEW_PARALLAX
+/// The absolute maximum distance to translate the thumb view.
 static int thumbViewParallaxAbsoluteMax = 4;
+#endif
+
+#ifdef NEAR_SHADOW_VIEW_PARALLAX
+/// Multiplied by thumbViewParallaxAbsoluteMax.
+static int nearShadowViewParallaxFraction = 1/4;
 #endif
 
 - (void)setUpThumbViewMotionEffects
@@ -144,15 +150,15 @@ static int thumbViewParallaxAbsoluteMax = 4;
 	// Horizontal motion
 	UIInterpolatingMotionEffect *horizontalShadow = [[UIInterpolatingMotionEffect alloc]
 			initWithKeyPath:@"layer.transform" type:UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis];
-	horizontalShadow.minimumRelativeValue = [NSValue valueWithCATransform3D:CATransform3DMakeTranslation(-thumbViewParallaxAbsoluteMax/4, 0, 0)];
-	horizontalShadow.maximumRelativeValue = [NSValue valueWithCATransform3D:CATransform3DMakeTranslation(thumbViewParallaxAbsoluteMax/4, 0, 0)];
+	horizontalShadow.minimumRelativeValue = [NSValue valueWithCATransform3D:CATransform3DMakeTranslation(-thumbViewParallaxAbsoluteMax * nearShadowViewParallaxFraction, 0, 0)];
+	horizontalShadow.maximumRelativeValue = [NSValue valueWithCATransform3D:CATransform3DMakeTranslation(thumbViewParallaxAbsoluteMax * nearShadowViewParallaxFraction, 0, 0)];
 	[_nearShadowView addMotionEffect:horizontalShadow];
 	
 	// Vertical motion
 	UIInterpolatingMotionEffect *verticalShadow = [[UIInterpolatingMotionEffect alloc]
 											 initWithKeyPath:@"layer.transform" type:UIInterpolatingMotionEffectTypeTiltAlongVerticalAxis];
-	verticalShadow.minimumRelativeValue = [NSValue valueWithCATransform3D:CATransform3DMakeTranslation(0, -thumbViewParallaxAbsoluteMax/4, 0)];
-	verticalShadow.maximumRelativeValue = [NSValue valueWithCATransform3D:CATransform3DMakeTranslation(0, thumbViewParallaxAbsoluteMax/4, 0)];
+	verticalShadow.minimumRelativeValue = [NSValue valueWithCATransform3D:CATransform3DMakeTranslation(0, -thumbViewParallaxAbsoluteMax * nearShadowViewParallaxFraction, 0)];
+	verticalShadow.maximumRelativeValue = [NSValue valueWithCATransform3D:CATransform3DMakeTranslation(0, thumbViewParallaxAbsoluteMax * nearShadowViewParallaxFraction, 0)];
 	[_nearShadowView addMotionEffect:verticalShadow];
 #endif
 	
