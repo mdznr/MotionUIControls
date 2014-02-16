@@ -17,13 +17,26 @@
 /// The thumb view.
 @property (strong, nonatomic, readonly) UIView *thumbView;
 
-/// The shadow view.
-@property (strong, nonatomic) UIImageView *shadowView;
+/// The closer shadow view with little diffusion.
+@property (strong, nonatomic) UIImageView *nearShadowView;
+
+/// The futher shadow with a lot of diffusion.
+@property (strong, nonatomic) UIImageView *farShadowView;
 
 @end
 
 
 @implementation MTZSlider
+
+/// The asset name for the thumb view.
+static NSString *thumbViewAssetName = @"Thumb";
+
+/// The asset name for the near shadow image view.
+static NSString *nearShadowViewAssetName = @"Thumb_Near_Shadow";
+
+/// The asset name for the far shadow image view.
+static NSString *farShadowViewAssetName = @"Thumb_Far_Shadow";
+
 
 #pragma mark - Creating & Deallocating
 
@@ -62,8 +75,18 @@
 
 - (void)_MTZSlider_setUp_isNowReady
 {
-	_shadowView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@""]];
-	_shadowView.center = self.thumbView.center;
+	// Use custom image for thumb view.
+	[self setThumbImage:[UIImage imageNamed:thumbViewAssetName] forState:UIControlStateNormal];
+	
+	// Near shadow image view.
+	_nearShadowView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:nearShadowViewAssetName]];
+	_nearShadowView.center = CGPointMake(self.thumbView.center.x, self.thumbView.center.y + 3);
+	[self insertSubview:_nearShadowView belowSubview:self.thumbView];
+	
+	// Far shadow image view.
+	_farShadowView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:farShadowViewAssetName]];
+	_farShadowView.center = CGPointMake(self.thumbView.center.x, self.thumbView.center.y + 6);
+	[self insertSubview:_farShadowView belowSubview:_nearShadowView];
 	
 	[self setUpThumbViewMotionEffects];
 }
@@ -82,7 +105,7 @@
 
 #pragma mark - Properties
 
-static NSString *thumbViewKeyPath = @"_thumbViewNeue";
+static NSString *thumbViewKeyPath = @"_thumbView";
 
 - (UIView *)thumbView
 {
@@ -93,7 +116,7 @@ static NSString *thumbViewKeyPath = @"_thumbViewNeue";
 #pragma mark - Motion Effects
 
 #ifdef THUMB_VIEW_PARALLAX
-static int thumbViewParallaxAbsoluteMax = 4;
+static int thumbViewParallaxAbsoluteMax = 5;
 #endif
 
 - (void)setUpThumbViewMotionEffects
@@ -102,8 +125,6 @@ static int thumbViewParallaxAbsoluteMax = 4;
 	// Horizontal motion
 	UIInterpolatingMotionEffect *horizontal = [[UIInterpolatingMotionEffect alloc]
 			 initWithKeyPath:@"layer.transform" type:UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis];
-//	horizontal.minimumRelativeValue = [NSValue valueWithCGAffineTransform:CGAffineTransformMakeTranslation(-thumbViewParallaxAbsoluteMax, 0)];
-//	horizontal.maximumRelativeValue = [NSValue valueWithCGAffineTransform:CGAffineTransformMakeTranslation(thumbViewParallaxAbsoluteMax, 0)];
 	horizontal.minimumRelativeValue = [NSValue valueWithCATransform3D:CATransform3DMakeTranslation(-thumbViewParallaxAbsoluteMax, 0, 0)];
 	horizontal.maximumRelativeValue = [NSValue valueWithCATransform3D:CATransform3DMakeTranslation(thumbViewParallaxAbsoluteMax, 0, 0)];
 	[self.thumbView addMotionEffect:horizontal];
@@ -111,8 +132,6 @@ static int thumbViewParallaxAbsoluteMax = 4;
 	// Vertical motion
 	UIInterpolatingMotionEffect *vertical = [[UIInterpolatingMotionEffect alloc]
 			 initWithKeyPath:@"layer.transform" type:UIInterpolatingMotionEffectTypeTiltAlongVerticalAxis];
-//	vertical.minimumRelativeValue = [NSValue valueWithCGAffineTransform:CGAffineTransformMakeTranslation(0, -thumbViewParallaxAbsoluteMax)];
-//	vertical.maximumRelativeValue = [NSValue valueWithCGAffineTransform:CGAffineTransformMakeTranslation(0, thumbViewParallaxAbsoluteMax)];
 	vertical.minimumRelativeValue = [NSValue valueWithCATransform3D:CATransform3DMakeTranslation(0, -thumbViewParallaxAbsoluteMax, 0)];
 	vertical.maximumRelativeValue = [NSValue valueWithCATransform3D:CATransform3DMakeTranslation(0, thumbViewParallaxAbsoluteMax, 0)];
 	[self.thumbView addMotionEffect:vertical];

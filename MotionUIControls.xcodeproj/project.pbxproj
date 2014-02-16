@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C954562F18B1614500615C76 /* MTZSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = C954562E18B1614500615C76 /* MTZSlider.m */; };
+		C954563818B1617D00615C76 /* Thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = C954563218B1617C00615C76 /* Thumb.png */; };
+		C954563918B1617D00615C76 /* Thumb@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C954563318B1617C00615C76 /* Thumb@2x.png */; };
+		C954563A18B1617D00615C76 /* Thumb_Far_Shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = C954563418B1617C00615C76 /* Thumb_Far_Shadow.png */; };
+		C954563B18B1617D00615C76 /* Thumb_Far_Shadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C954563518B1617C00615C76 /* Thumb_Far_Shadow@2x.png */; };
+		C954563C18B1617D00615C76 /* Thumb_Near_Shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = C954563618B1617C00615C76 /* Thumb_Near_Shadow.png */; };
+		C954563D18B1617D00615C76 /* Thumb_Near_Shadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C954563718B1617C00615C76 /* Thumb_Near_Shadow@2x.png */; };
 		C97FB6B018AD7BFC00800FA9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C97FB6AF18AD7BFC00800FA9 /* Foundation.framework */; };
 		C97FB6B218AD7BFC00800FA9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C97FB6B118AD7BFC00800FA9 /* CoreGraphics.framework */; };
 		C97FB6B418AD7BFC00800FA9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C97FB6B318AD7BFC00800FA9 /* UIKit.framework */; };
@@ -22,7 +29,6 @@
 		C97FB6D418AD7BFC00800FA9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C97FB6B318AD7BFC00800FA9 /* UIKit.framework */; };
 		C97FB6DC18AD7BFC00800FA9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C97FB6DA18AD7BFC00800FA9 /* InfoPlist.strings */; };
 		C97FB6DE18AD7BFC00800FA9 /* MotionUIControlsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C97FB6DD18AD7BFC00800FA9 /* MotionUIControlsTests.m */; };
-		C97FB6E918AD7C5B00800FA9 /* MTZSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = C97FB6E818AD7C5B00800FA9 /* MTZSlider.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +42,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C954562D18B1614500615C76 /* MTZSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MTZSlider.h; path = UISlider/MTZSlider.h; sourceTree = SOURCE_ROOT; };
+		C954562E18B1614500615C76 /* MTZSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MTZSlider.m; path = UISlider/MTZSlider.m; sourceTree = SOURCE_ROOT; };
+		C954563218B1617C00615C76 /* Thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Thumb.png; sourceTree = "<group>"; };
+		C954563318B1617C00615C76 /* Thumb@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Thumb@2x.png"; sourceTree = "<group>"; };
+		C954563418B1617C00615C76 /* Thumb_Far_Shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Thumb_Far_Shadow.png; sourceTree = "<group>"; };
+		C954563518B1617C00615C76 /* Thumb_Far_Shadow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Thumb_Far_Shadow@2x.png"; sourceTree = "<group>"; };
+		C954563618B1617C00615C76 /* Thumb_Near_Shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Thumb_Near_Shadow.png; sourceTree = "<group>"; };
+		C954563718B1617C00615C76 /* Thumb_Near_Shadow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Thumb_Near_Shadow@2x.png"; sourceTree = "<group>"; };
 		C97FB6AC18AD7BFC00800FA9 /* MotionUIControls.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MotionUIControls.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C97FB6AF18AD7BFC00800FA9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C97FB6B118AD7BFC00800FA9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -56,8 +70,6 @@
 		C97FB6D918AD7BFC00800FA9 /* MotionUIControlsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MotionUIControlsTests-Info.plist"; sourceTree = "<group>"; };
 		C97FB6DB18AD7BFC00800FA9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C97FB6DD18AD7BFC00800FA9 /* MotionUIControlsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MotionUIControlsTests.m; sourceTree = "<group>"; };
-		C97FB6E718AD7C5B00800FA9 /* MTZSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTZSlider.h; sourceTree = "<group>"; };
-		C97FB6E818AD7C5B00800FA9 /* MTZSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTZSlider.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +96,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C954563018B1614900615C76 /* UISlider */ = {
+			isa = PBXGroup;
+			children = (
+				C954562D18B1614500615C76 /* MTZSlider.h */,
+				C954562E18B1614500615C76 /* MTZSlider.m */,
+				C954563118B1617C00615C76 /* Assets */,
+			);
+			name = UISlider;
+			sourceTree = "<group>";
+		};
+		C954563118B1617C00615C76 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				C954563218B1617C00615C76 /* Thumb.png */,
+				C954563318B1617C00615C76 /* Thumb@2x.png */,
+				C954563418B1617C00615C76 /* Thumb_Far_Shadow.png */,
+				C954563518B1617C00615C76 /* Thumb_Far_Shadow@2x.png */,
+				C954563618B1617C00615C76 /* Thumb_Near_Shadow.png */,
+				C954563718B1617C00615C76 /* Thumb_Near_Shadow@2x.png */,
+			);
+			name = Assets;
+			path = UISlider/Assets;
+			sourceTree = SOURCE_ROOT;
+		};
 		C97FB6A318AD7BFC00800FA9 = {
 			isa = PBXGroup;
 			children = (
@@ -123,8 +159,7 @@
 				C97FB6C418AD7BFC00800FA9 /* Main_iPad.storyboard */,
 				C97FB6C718AD7BFC00800FA9 /* MTZViewController.h */,
 				C97FB6C818AD7BFC00800FA9 /* MTZViewController.m */,
-				C97FB6E718AD7C5B00800FA9 /* MTZSlider.h */,
-				C97FB6E818AD7C5B00800FA9 /* MTZSlider.m */,
+				C954563018B1614900615C76 /* UISlider */,
 				C97FB6CA18AD7BFC00800FA9 /* Images.xcassets */,
 				C97FB6B618AD7BFC00800FA9 /* Supporting Files */,
 			);
@@ -238,9 +273,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				C97FB6C618AD7BFC00800FA9 /* Main_iPad.storyboard in Resources */,
+				C954563C18B1617D00615C76 /* Thumb_Near_Shadow.png in Resources */,
+				C954563B18B1617D00615C76 /* Thumb_Far_Shadow@2x.png in Resources */,
+				C954563A18B1617D00615C76 /* Thumb_Far_Shadow.png in Resources */,
 				C97FB6CB18AD7BFC00800FA9 /* Images.xcassets in Resources */,
+				C954563818B1617D00615C76 /* Thumb.png in Resources */,
+				C954563918B1617D00615C76 /* Thumb@2x.png in Resources */,
 				C97FB6C318AD7BFC00800FA9 /* Main_iPhone.storyboard in Resources */,
 				C97FB6BA18AD7BFC00800FA9 /* InfoPlist.strings in Resources */,
+				C954563D18B1617D00615C76 /* Thumb_Near_Shadow@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,7 +300,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C97FB6E918AD7C5B00800FA9 /* MTZSlider.m in Sources */,
+				C954562F18B1614500615C76 /* MTZSlider.m in Sources */,
 				C97FB6C018AD7BFC00800FA9 /* MTZAppDelegate.m in Sources */,
 				C97FB6BC18AD7BFC00800FA9 /* main.m in Sources */,
 				C97FB6C918AD7BFC00800FA9 /* MTZViewController.m in Sources */,
