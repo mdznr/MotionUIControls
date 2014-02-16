@@ -93,7 +93,7 @@ static NSString *thumbViewKeyPath = @"_thumbViewNeue";
 #pragma mark - Motion Effects
 
 #ifdef THUMB_VIEW_PARALLAX
-static int thumbViewParallaxAbsoluteMax = 40;
+static int thumbViewParallaxAbsoluteMax = 4;
 #endif
 
 - (void)setUpThumbViewMotionEffects
@@ -116,9 +116,6 @@ static int thumbViewParallaxAbsoluteMax = 40;
 	vertical.minimumRelativeValue = [NSValue valueWithCATransform3D:CATransform3DMakeTranslation(0, -thumbViewParallaxAbsoluteMax, 0)];
 	vertical.maximumRelativeValue = [NSValue valueWithCATransform3D:CATransform3DMakeTranslation(0, thumbViewParallaxAbsoluteMax, 0)];
 	[self.thumbView addMotionEffect:vertical];
-	
-	UIMotionEffectGroup *group = [[UIMotionEffectGroup alloc] init];
-	group.motionEffects = @[horizontal, vertical];
 #endif
 	
 //	[self observeThumbViewFrame];
