@@ -8,8 +8,11 @@
 
 #import "MTZSlider.h"
 
-// Enable parallax effect on thumb view. This may lead to "inaccurate" UISliders.
+/// Enable parallax effect on thumb view.
 #define THUMB_VIEW_PARALLAX
+
+/// Enable parallax effect on the near shadow view.
+#define NEAR_SHADOW_VIEW_PARALLAX
 
 
 @interface MTZSlider ()
@@ -80,13 +83,13 @@ static NSString *farShadowViewAssetName = @"Thumb_Far_Shadow";
 	
 	// Near shadow image view.
 	_nearShadowView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:nearShadowViewAssetName]];
-	_nearShadowView.center = CGPointMake(self.thumbView.center.x, self.thumbView.center.y + 3);
 	[self insertSubview:_nearShadowView belowSubview:self.thumbView];
 	
 	// Far shadow image view.
 	_farShadowView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:farShadowViewAssetName]];
-	_farShadowView.center = CGPointMake(self.thumbView.center.x, self.thumbView.center.y + 6);
 	[self insertSubview:_farShadowView belowSubview:_nearShadowView];
+	
+	[self synchronizeThumbViewAndShadows];
 	
 	[self setUpThumbViewMotionEffects];
 }
@@ -116,7 +119,7 @@ static NSString *thumbViewKeyPath = @"_thumbView";
 #pragma mark - Motion Effects
 
 #ifdef THUMB_VIEW_PARALLAX
-static int thumbViewParallaxAbsoluteMax = 5;
+static int thumbViewParallaxAbsoluteMax = 4;
 #endif
 
 - (void)setUpThumbViewMotionEffects
@@ -124,25 +127,47 @@ static int thumbViewParallaxAbsoluteMax = 5;
 #ifdef THUMB_VIEW_PARALLAX
 	// Horizontal motion
 	UIInterpolatingMotionEffect *horizontal = [[UIInterpolatingMotionEffect alloc]
-			 initWithKeyPath:@"layer.transform" type:UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis];
+			initWithKeyPath:@"layer.transform" type:UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis];
 	horizontal.minimumRelativeValue = [NSValue valueWithCATransform3D:CATransform3DMakeTranslation(-thumbViewParallaxAbsoluteMax, 0, 0)];
 	horizontal.maximumRelativeValue = [NSValue valueWithCATransform3D:CATransform3DMakeTranslation(thumbViewParallaxAbsoluteMax, 0, 0)];
 	[self.thumbView addMotionEffect:horizontal];
 	
 	// Vertical motion
 	UIInterpolatingMotionEffect *vertical = [[UIInterpolatingMotionEffect alloc]
-			 initWithKeyPath:@"layer.transform" type:UIInterpolatingMotionEffectTypeTiltAlongVerticalAxis];
+			initWithKeyPath:@"layer.transform" type:UIInterpolatingMotionEffectTypeTiltAlongVerticalAxis];
 	vertical.minimumRelativeValue = [NSValue valueWithCATransform3D:CATransform3DMakeTranslation(0, -thumbViewParallaxAbsoluteMax, 0)];
 	vertical.maximumRelativeValue = [NSValue valueWithCATransform3D:CATransform3DMakeTranslation(0, thumbViewParallaxAbsoluteMax, 0)];
 	[self.thumbView addMotionEffect:vertical];
 #endif
 	
-//	[self observeThumbViewFrame];
+#ifdef NEAR_SHADOW_VIEW_PARALLAX
+	// Horizontal motion
+	UIInterpolatingMotionEffect *horizontalShadow = [[UIInterpolatingMotionEffect alloc]
+			initWithKeyPath:@"layer.transform" type:UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis];
+	horizontalShadow.minimumRelativeValue = [NSValue valueWithCATransform3D:CATransform3DMakeTranslation(-thumbViewParallaxAbsoluteMax/4, 0, 0)];
+	horizontalShadow.maximumRelativeValue = [NSValue valueWithCATransform3D:CATransform3DMakeTranslation(thumbViewParallaxAbsoluteMax/4, 0, 0)];
+	[_nearShadowView addMotionEffect:horizontalShadow];
+	
+	// Vertical motion
+	UIInterpolatingMotionEffect *verticalShadow = [[UIInterpolatingMotionEffect alloc]
+											 initWithKeyPath:@"layer.transform" type:UIInterpolatingMotionEffectTypeTiltAlongVerticalAxis];
+	verticalShadow.minimumRelativeValue = [NSValue valueWithCATransform3D:CATransform3DMakeTranslation(0, -thumbViewParallaxAbsoluteMax/4, 0)];
+	verticalShadow.maximumRelativeValue = [NSValue valueWithCATransform3D:CATransform3DMakeTranslation(0, thumbViewParallaxAbsoluteMax/4, 0)];
+	[_nearShadowView addMotionEffect:verticalShadow];
+#endif
+	
+	[self observeThumbViewFrame];
 }
 
 - (void)thumbViewFrameChanged
 {
-	NSLog(@"%@", NSStringFromCGRect(self.thumbView.frame));
+	[self synchronizeThumbViewAndShadows];
+}
+
+- (void)synchronizeThumbViewAndShadows
+{
+	_nearShadowView.center = CGPointMake(self.thumbView.center.x, self.thumbView.center.y + 3);
+	_farShadowView.center = CGPointMake(self.thumbView.center.x, self.thumbView.center.y + 5.5);
 }
 
 
