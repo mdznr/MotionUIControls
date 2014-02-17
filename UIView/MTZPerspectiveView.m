@@ -1,14 +1,14 @@
 //
-//  MTZParallaxPerspectiveView.m
+//  MTZPerspectiveView.m
 //  MotionUIControls
 //
 //  Created by Matt Zanchelli on 2/16/14.
 //  Copyright (c) 2014 Matt Zanchelli. All rights reserved.
 //
 
-#import "MTZParallaxPerspectiveView.h"
+#import "MTZPerspectiveView.h"
 
-@implementation MTZParallaxPerspectiveView
+@implementation MTZPerspectiveView
 
 #pragma mark - Initialization
 
@@ -16,7 +16,7 @@
 {
 	self = [super initWithFrame:frame];
 	if ( self ) {
-		[self __MTZParallaxPerspectiveView_setUp];
+		[self __MTZPerspectiveView_setUp];
 	}
 	return self;
 }
@@ -25,7 +25,7 @@
 {
 	self = [super initWithCoder:aDecoder];
 	if ( self ) {
-		[self __MTZParallaxPerspectiveView_setUp];
+		[self __MTZPerspectiveView_setUp];
 	}
 	return self;
 }
@@ -34,20 +34,18 @@
 {
 	self = [super init];
 	if ( self ) {
-		[self __MTZParallaxPerspectiveView_setUp];
+		[self __MTZPerspectiveView_setUp];
 	}
 	return self;
 }
 
-- (void)__MTZParallaxPerspectiveView_setUp
+- (void)__MTZPerspectiveView_setUp
 {
-	return;
-	
-	// This clears out issues
+	// Resolves issues with jagged lines.
 	self.layer.shouldRasterize = YES;
 	
 	// Default perspective type
-	[self setPerspectiveType:MTZParallaxPerspectiveTypeDevice];
+	[self setPerspectiveType:MTZPerspectiveTypeDevice];
 }
 
 CATransform3D makeSkew(CGFloat x, CGFloat y)
@@ -57,15 +55,15 @@ CATransform3D makeSkew(CGFloat x, CGFloat y)
 	return CATransform3DRotate(transform, 60.0f * M_PI / 180.0f, x, y, 0);
 }
 
-- (void)setPerspectiveType:(MTZParallaxPerspectiveViewType)perspectiveType
+- (void)setPerspectiveType:(MTZPerspectiveViewType)perspectiveType
 {
 	_perspectiveType = perspectiveType;
 	
 	int multiplier = 0;
-	if ( _perspectiveType == MTZParallaxPerspectiveTypeUser )  {
-		multiplier = 1;
-	} else if ( _perspectiveType == MTZParallaxPerspectiveTypeDevice ) {
+	if ( _perspectiveType == MTZPerspectiveTypeUser )  {
 		multiplier = -1;
+	} else if ( _perspectiveType == MTZPerspectiveTypeDevice ) {
+		multiplier = 1;
 	}
 	
 	// Clear out motion effects.
@@ -73,14 +71,14 @@ CATransform3D makeSkew(CGFloat x, CGFloat y)
 	
 	// Horizontal motion
 	UIInterpolatingMotionEffect *horizontal = [[UIInterpolatingMotionEffect alloc] initWithKeyPath:@"layer.transform" type:UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis];
-	horizontal.minimumRelativeValue = [NSValue valueWithCATransform3D:makeSkew(0, -1 * multiplier)];
-	horizontal.maximumRelativeValue = [NSValue valueWithCATransform3D:makeSkew(0,  1 * multiplier)];
+	horizontal.minimumRelativeValue = [NSValue valueWithCATransform3D:makeSkew(0,  1 * multiplier)];
+	horizontal.maximumRelativeValue = [NSValue valueWithCATransform3D:makeSkew(0, -1 * multiplier)];
 	[self addMotionEffect:horizontal];
 	
 	// Vertical motion
 	UIInterpolatingMotionEffect *vertical = [[UIInterpolatingMotionEffect alloc] initWithKeyPath:@"layer.transform" type:UIInterpolatingMotionEffectTypeTiltAlongVerticalAxis];
-	vertical.minimumRelativeValue = [NSValue valueWithCATransform3D:makeSkew( 1 * multiplier, 0)];
-	vertical.maximumRelativeValue = [NSValue valueWithCATransform3D:makeSkew(-1 * multiplier, 0)];
+	vertical.minimumRelativeValue = [NSValue valueWithCATransform3D:makeSkew(-1 * multiplier, 0)];
+	vertical.maximumRelativeValue = [NSValue valueWithCATransform3D:makeSkew( 1 * multiplier, 0)];
 	[self addMotionEffect:vertical];
 }
 

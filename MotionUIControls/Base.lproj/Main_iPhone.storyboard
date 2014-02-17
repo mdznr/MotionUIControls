@@ -12,7 +12,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" id="YlB-YP-PfF" userLabel="Parallax View" customClass="MTZParallaxPerspectiveView">
+                            <view contentMode="scaleToFill" id="YlB-YP-PfF" userLabel="Parallax View" customClass="MTZPerspectiveView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
