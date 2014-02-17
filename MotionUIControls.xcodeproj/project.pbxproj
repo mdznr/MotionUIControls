@@ -14,6 +14,7 @@
 		C954563B18B1617D00615C76 /* Thumb_Far_Shadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C954563518B1617C00615C76 /* Thumb_Far_Shadow@2x.png */; };
 		C954563C18B1617D00615C76 /* Thumb_Near_Shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = C954563618B1617C00615C76 /* Thumb_Near_Shadow.png */; };
 		C954563D18B1617D00615C76 /* Thumb_Near_Shadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C954563718B1617C00615C76 /* Thumb_Near_Shadow@2x.png */; };
+		C954564018B187B700615C76 /* MTZParallaxPerspectiveView.m in Sources */ = {isa = PBXBuildFile; fileRef = C954563F18B187B700615C76 /* MTZParallaxPerspectiveView.m */; };
 		C97FB6B018AD7BFC00800FA9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C97FB6AF18AD7BFC00800FA9 /* Foundation.framework */; };
 		C97FB6B218AD7BFC00800FA9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C97FB6B118AD7BFC00800FA9 /* CoreGraphics.framework */; };
 		C97FB6B418AD7BFC00800FA9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C97FB6B318AD7BFC00800FA9 /* UIKit.framework */; };
@@ -50,6 +51,8 @@
 		C954563518B1617C00615C76 /* Thumb_Far_Shadow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Thumb_Far_Shadow@2x.png"; sourceTree = "<group>"; };
 		C954563618B1617C00615C76 /* Thumb_Near_Shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Thumb_Near_Shadow.png; sourceTree = "<group>"; };
 		C954563718B1617C00615C76 /* Thumb_Near_Shadow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Thumb_Near_Shadow@2x.png"; sourceTree = "<group>"; };
+		C954563E18B187B700615C76 /* MTZParallaxPerspectiveView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MTZParallaxPerspectiveView.h; path = UIView/MTZParallaxPerspectiveView.h; sourceTree = SOURCE_ROOT; };
+		C954563F18B187B700615C76 /* MTZParallaxPerspectiveView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MTZParallaxPerspectiveView.m; path = UIView/MTZParallaxPerspectiveView.m; sourceTree = SOURCE_ROOT; };
 		C97FB6AC18AD7BFC00800FA9 /* MotionUIControls.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MotionUIControls.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C97FB6AF18AD7BFC00800FA9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C97FB6B118AD7BFC00800FA9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -120,6 +123,15 @@
 			path = UISlider/Assets;
 			sourceTree = SOURCE_ROOT;
 		};
+		C954564118B187BA00615C76 /* Parallax Perspective View */ = {
+			isa = PBXGroup;
+			children = (
+				C954563E18B187B700615C76 /* MTZParallaxPerspectiveView.h */,
+				C954563F18B187B700615C76 /* MTZParallaxPerspectiveView.m */,
+			);
+			name = "Parallax Perspective View";
+			sourceTree = "<group>";
+		};
 		C97FB6A318AD7BFC00800FA9 = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +171,7 @@
 				C97FB6C418AD7BFC00800FA9 /* Main_iPad.storyboard */,
 				C97FB6C718AD7BFC00800FA9 /* MTZViewController.h */,
 				C97FB6C818AD7BFC00800FA9 /* MTZViewController.m */,
+				C954564118B187BA00615C76 /* Parallax Perspective View */,
 				C954563018B1614900615C76 /* UISlider */,
 				C97FB6CA18AD7BFC00800FA9 /* Images.xcassets */,
 				C97FB6B618AD7BFC00800FA9 /* Supporting Files */,
@@ -304,6 +317,7 @@
 				C97FB6C018AD7BFC00800FA9 /* MTZAppDelegate.m in Sources */,
 				C97FB6BC18AD7BFC00800FA9 /* main.m in Sources */,
 				C97FB6C918AD7BFC00800FA9 /* MTZViewController.m in Sources */,
+				C954564018B187B700615C76 /* MTZParallaxPerspectiveView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
