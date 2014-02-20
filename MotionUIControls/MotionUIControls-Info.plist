@@ -26,6 +26,17 @@
 	<true/>
 	<key>UIMainStoryboardFile</key>
 	<string>Main_iPhone</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>com.mattzanchelli.MotionUIControls</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>motionuicontrols</string>
+			</array>
+		</dict>
+	</array>
 	<key>UIMainStoryboardFile~ipad</key>
 	<string>Main_iPad</string>
 	<key>UIRequiredDeviceCapabilities</key>

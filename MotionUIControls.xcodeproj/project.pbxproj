@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C93FCFB218B2EB1F00B898BA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C93FCFB118B2EB1F00B898BA /* QuartzCore.framework */; };
 		C954562F18B1614500615C76 /* MTZSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = C954562E18B1614500615C76 /* MTZSlider.m */; };
 		C954563818B1617D00615C76 /* Thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = C954563218B1617C00615C76 /* Thumb.png */; };
 		C954563918B1617D00615C76 /* Thumb@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C954563318B1617C00615C76 /* Thumb@2x.png */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C93FCFB118B2EB1F00B898BA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		C954562D18B1614500615C76 /* MTZSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MTZSlider.h; path = UISlider/MTZSlider.h; sourceTree = SOURCE_ROOT; };
 		C954562E18B1614500615C76 /* MTZSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MTZSlider.m; path = UISlider/MTZSlider.m; sourceTree = SOURCE_ROOT; };
 		C954563218B1617C00615C76 /* Thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Thumb.png; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C93FCFB218B2EB1F00B898BA /* QuartzCore.framework in Frameworks */,
 				C97FB6B218AD7BFC00800FA9 /* CoreGraphics.framework in Frameworks */,
 				C97FB6B418AD7BFC00800FA9 /* UIKit.framework in Frameworks */,
 				C97FB6B018AD7BFC00800FA9 /* Foundation.framework in Frameworks */,
@@ -154,6 +157,7 @@
 		C97FB6AE18AD7BFC00800FA9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C93FCFB118B2EB1F00B898BA /* QuartzCore.framework */,
 				C97FB6AF18AD7BFC00800FA9 /* Foundation.framework */,
 				C97FB6B118AD7BFC00800FA9 /* CoreGraphics.framework */,
 				C97FB6B318AD7BFC00800FA9 /* UIKit.framework */,
