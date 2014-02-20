@@ -51,7 +51,7 @@
 CATransform3D makeSkew(CGFloat x, CGFloat y)
 {
 	CATransform3D transform = CATransform3DIdentity;
-	transform.m34 = 1.0f / 1000;
+	transform.m34 = 1.0f / 2000;
 	return CATransform3DRotate(transform, 60.0f * M_PI / 180.0f, x, y, 0);
 }
 
