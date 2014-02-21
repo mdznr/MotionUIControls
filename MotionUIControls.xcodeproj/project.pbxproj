@@ -302,7 +302,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "objc-assetgen -o UISlider/ ../UISlider/MTZSlider.xcassets";
+			shellScript = "# MTZSlider\nobjc-assetgen -o UISlider/ ../UISlider/MTZSlider.xcassets";
 		};
 /* End PBXShellScriptBuildPhase section */
 
