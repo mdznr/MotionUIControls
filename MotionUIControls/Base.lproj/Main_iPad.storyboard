@@ -30,13 +30,15 @@
                                     </slider>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="568" id="3O9-Hx-mN7"/>
+                                    <constraint firstAttribute="width" constant="320" id="jbl-QT-d1s"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wNB-kl-Xri" firstAttribute="top" secondItem="9qq-be-O71" secondAttribute="bottom" constant="80" id="DDz-JO-A8w"/>
                             <constraint firstItem="wNB-kl-Xri" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bVc-kJ-Qeh"/>
-                            <constraint firstItem="wNB-kl-Xri" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="352" id="hEl-NR-W1h"/>
                             <constraint firstItem="wNB-kl-Xri" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="l5G-1D-gUO"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
