@@ -302,7 +302,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#objc-assetgen -o UISlider UISlider/MTZSlider.xcassets\nobjc-assetgen -o /Users/matt/Dropbox/github/MotionUIControls/UISlider/ /Users/matt/Dropbox/github/MotionUIControls/UISlider/MTZSlider.xcassets";
+			shellScript = "objc-assetgen -o ./UISlider/ /Users/matt/Dropbox/github/MotionUIControls/UISlider/MTZSlider.xcassets";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -455,6 +455,7 @@
 				GCC_PREFIX_HEADER = "MotionUIControls/MotionUIControls-Prefix.pch";
 				INFOPLIST_FILE = "MotionUIControls/MotionUIControls-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = ./UISlider;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -468,6 +469,7 @@
 				GCC_PREFIX_HEADER = "MotionUIControls/MotionUIControls-Prefix.pch";
 				INFOPLIST_FILE = "MotionUIControls/MotionUIControls-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = ./UISlider;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
