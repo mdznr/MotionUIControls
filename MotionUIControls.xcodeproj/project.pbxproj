@@ -31,6 +31,8 @@
 		C97FB6D418AD7BFC00800FA9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C97FB6B318AD7BFC00800FA9 /* UIKit.framework */; };
 		C97FB6DC18AD7BFC00800FA9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C97FB6DA18AD7BFC00800FA9 /* InfoPlist.strings */; };
 		C97FB6DE18AD7BFC00800FA9 /* MotionUIControlsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C97FB6DD18AD7BFC00800FA9 /* MotionUIControlsTests.m */; };
+		C9E3DE3218B7285400946E6E /* MTZSlider.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9E3DE3118B7285400946E6E /* MTZSlider.xcassets */; };
+		C9E3DE3518B728EB00946E6E /* MTZSliderCatalog.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E3DE3418B728EB00946E6E /* MTZSliderCatalog.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,9 @@
 		C97FB6D918AD7BFC00800FA9 /* MotionUIControlsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MotionUIControlsTests-Info.plist"; sourceTree = "<group>"; };
 		C97FB6DB18AD7BFC00800FA9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C97FB6DD18AD7BFC00800FA9 /* MotionUIControlsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MotionUIControlsTests.m; sourceTree = "<group>"; };
+		C9E3DE3118B7285400946E6E /* MTZSlider.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = MTZSlider.xcassets; path = UISlider/MTZSlider.xcassets; sourceTree = SOURCE_ROOT; };
+		C9E3DE3318B728EB00946E6E /* MTZSliderCatalog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTZSliderCatalog.h; sourceTree = "<group>"; };
+		C9E3DE3418B728EB00946E6E /* MTZSliderCatalog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTZSliderCatalog.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +112,9 @@
 			children = (
 				C954562D18B1614500615C76 /* MTZSlider.h */,
 				C954562E18B1614500615C76 /* MTZSlider.m */,
+				C9E3DE3118B7285400946E6E /* MTZSlider.xcassets */,
+				C9E3DE3318B728EB00946E6E /* MTZSliderCatalog.h */,
+				C9E3DE3418B728EB00946E6E /* MTZSliderCatalog.m */,
 				C954563118B1617C00615C76 /* Assets */,
 			);
 			name = UISlider;
@@ -298,6 +306,7 @@
 				C954563918B1617D00615C76 /* Thumb@2x.png in Resources */,
 				C97FB6C318AD7BFC00800FA9 /* Main_iPhone.storyboard in Resources */,
 				C97FB6BA18AD7BFC00800FA9 /* InfoPlist.strings in Resources */,
+				C9E3DE3218B7285400946E6E /* MTZSlider.xcassets in Resources */,
 				C954563D18B1617D00615C76 /* Thumb_Near_Shadow@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -317,6 +326,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9E3DE3518B728EB00946E6E /* MTZSliderCatalog.m in Sources */,
 				C954562F18B1614500615C76 /* MTZSlider.m in Sources */,
 				C97FB6C018AD7BFC00800FA9 /* MTZAppDelegate.m in Sources */,
 				C97FB6BC18AD7BFC00800FA9 /* main.m in Sources */,

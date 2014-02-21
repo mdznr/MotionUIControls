@@ -8,6 +8,8 @@
 
 #import "MTZSlider.h"
 
+#import "MTZSliderCatalog.h"
+
 /// Enable parallax effect on thumb view.
 #define THUMB_VIEW_PARALLAX
 
@@ -30,15 +32,6 @@
 
 
 @implementation MTZSlider
-
-/// The asset name for the thumb view.
-static NSString *thumbViewAssetName = @"Thumb";
-
-/// The asset name for the near shadow image view.
-static NSString *nearShadowViewAssetName = @"Thumb_Near_Shadow";
-
-/// The asset name for the far shadow image view.
-static NSString *farShadowViewAssetName = @"Thumb_Far_Shadow";
 
 
 #pragma mark - Creating & Deallocating
@@ -79,14 +72,14 @@ static NSString *farShadowViewAssetName = @"Thumb_Far_Shadow";
 - (void)_MTZSlider_setUp_isNowReady
 {
 	// Use custom image for thumb view.
-	[self setThumbImage:[UIImage imageNamed:thumbViewAssetName] forState:UIControlStateNormal];
+	[self setThumbImage:[MTZSliderCatalog thumbImage] forState:UIControlStateNormal];
 	
 	// Near shadow image view.
-	_nearShadowView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:nearShadowViewAssetName]];
+	_nearShadowView = [[UIImageView alloc] initWithImage:[MTZSliderCatalog thumb_Near_ShadowImage]];
 	[self insertSubview:_nearShadowView belowSubview:self.thumbView];
 	
 	// Far shadow image view.
-	_farShadowView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:farShadowViewAssetName]];
+	_farShadowView = [[UIImageView alloc] initWithImage:[MTZSliderCatalog thumb_Far_ShadowImage]];
 	[self insertSubview:_farShadowView belowSubview:_nearShadowView];
 	
 	[self synchronizeThumbViewAndShadows];
