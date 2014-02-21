@@ -9,12 +9,6 @@
 /* Begin PBXBuildFile section */
 		C93FCFB218B2EB1F00B898BA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C93FCFB118B2EB1F00B898BA /* QuartzCore.framework */; };
 		C954562F18B1614500615C76 /* MTZSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = C954562E18B1614500615C76 /* MTZSlider.m */; };
-		C954563818B1617D00615C76 /* Thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = C954563218B1617C00615C76 /* Thumb.png */; };
-		C954563918B1617D00615C76 /* Thumb@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C954563318B1617C00615C76 /* Thumb@2x.png */; };
-		C954563A18B1617D00615C76 /* Thumb_Far_Shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = C954563418B1617C00615C76 /* Thumb_Far_Shadow.png */; };
-		C954563B18B1617D00615C76 /* Thumb_Far_Shadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C954563518B1617C00615C76 /* Thumb_Far_Shadow@2x.png */; };
-		C954563C18B1617D00615C76 /* Thumb_Near_Shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = C954563618B1617C00615C76 /* Thumb_Near_Shadow.png */; };
-		C954563D18B1617D00615C76 /* Thumb_Near_Shadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C954563718B1617C00615C76 /* Thumb_Near_Shadow@2x.png */; };
 		C954564018B187B700615C76 /* MTZPerspectiveView.m in Sources */ = {isa = PBXBuildFile; fileRef = C954563F18B187B700615C76 /* MTZPerspectiveView.m */; };
 		C97FB6B018AD7BFC00800FA9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C97FB6AF18AD7BFC00800FA9 /* Foundation.framework */; };
 		C97FB6B218AD7BFC00800FA9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C97FB6B118AD7BFC00800FA9 /* CoreGraphics.framework */; };
@@ -32,7 +26,7 @@
 		C97FB6DC18AD7BFC00800FA9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C97FB6DA18AD7BFC00800FA9 /* InfoPlist.strings */; };
 		C97FB6DE18AD7BFC00800FA9 /* MotionUIControlsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C97FB6DD18AD7BFC00800FA9 /* MotionUIControlsTests.m */; };
 		C9E3DE3218B7285400946E6E /* MTZSlider.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9E3DE3118B7285400946E6E /* MTZSlider.xcassets */; };
-		C9E3DE3518B728EB00946E6E /* MTZSliderCatalog.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E3DE3418B728EB00946E6E /* MTZSliderCatalog.m */; };
+		C9E3DE3A18B72A7600946E6E /* MTZSliderCatalog.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E3DE3918B72A7600946E6E /* MTZSliderCatalog.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,12 +43,6 @@
 		C93FCFB118B2EB1F00B898BA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		C954562D18B1614500615C76 /* MTZSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MTZSlider.h; path = UISlider/MTZSlider.h; sourceTree = SOURCE_ROOT; };
 		C954562E18B1614500615C76 /* MTZSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MTZSlider.m; path = UISlider/MTZSlider.m; sourceTree = SOURCE_ROOT; };
-		C954563218B1617C00615C76 /* Thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Thumb.png; sourceTree = "<group>"; };
-		C954563318B1617C00615C76 /* Thumb@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Thumb@2x.png"; sourceTree = "<group>"; };
-		C954563418B1617C00615C76 /* Thumb_Far_Shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Thumb_Far_Shadow.png; sourceTree = "<group>"; };
-		C954563518B1617C00615C76 /* Thumb_Far_Shadow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Thumb_Far_Shadow@2x.png"; sourceTree = "<group>"; };
-		C954563618B1617C00615C76 /* Thumb_Near_Shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Thumb_Near_Shadow.png; sourceTree = "<group>"; };
-		C954563718B1617C00615C76 /* Thumb_Near_Shadow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Thumb_Near_Shadow@2x.png"; sourceTree = "<group>"; };
 		C954563E18B187B700615C76 /* MTZPerspectiveView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MTZPerspectiveView.h; path = UIView/MTZPerspectiveView.h; sourceTree = SOURCE_ROOT; };
 		C954563F18B187B700615C76 /* MTZPerspectiveView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MTZPerspectiveView.m; path = UIView/MTZPerspectiveView.m; sourceTree = SOURCE_ROOT; };
 		C97FB6AC18AD7BFC00800FA9 /* MotionUIControls.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MotionUIControls.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,8 +66,8 @@
 		C97FB6DB18AD7BFC00800FA9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C97FB6DD18AD7BFC00800FA9 /* MotionUIControlsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MotionUIControlsTests.m; sourceTree = "<group>"; };
 		C9E3DE3118B7285400946E6E /* MTZSlider.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = MTZSlider.xcassets; path = UISlider/MTZSlider.xcassets; sourceTree = SOURCE_ROOT; };
-		C9E3DE3318B728EB00946E6E /* MTZSliderCatalog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTZSliderCatalog.h; sourceTree = "<group>"; };
-		C9E3DE3418B728EB00946E6E /* MTZSliderCatalog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTZSliderCatalog.m; sourceTree = "<group>"; };
+		C9E3DE3818B72A7600946E6E /* MTZSliderCatalog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MTZSliderCatalog.h; path = UISlider/MTZSliderCatalog.h; sourceTree = SOURCE_ROOT; };
+		C9E3DE3918B72A7600946E6E /* MTZSliderCatalog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MTZSliderCatalog.m; path = UISlider/MTZSliderCatalog.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,26 +101,11 @@
 				C954562D18B1614500615C76 /* MTZSlider.h */,
 				C954562E18B1614500615C76 /* MTZSlider.m */,
 				C9E3DE3118B7285400946E6E /* MTZSlider.xcassets */,
-				C9E3DE3318B728EB00946E6E /* MTZSliderCatalog.h */,
-				C9E3DE3418B728EB00946E6E /* MTZSliderCatalog.m */,
-				C954563118B1617C00615C76 /* Assets */,
+				C9E3DE3818B72A7600946E6E /* MTZSliderCatalog.h */,
+				C9E3DE3918B72A7600946E6E /* MTZSliderCatalog.m */,
 			);
 			name = UISlider;
 			sourceTree = "<group>";
-		};
-		C954563118B1617C00615C76 /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-				C954563218B1617C00615C76 /* Thumb.png */,
-				C954563318B1617C00615C76 /* Thumb@2x.png */,
-				C954563418B1617C00615C76 /* Thumb_Far_Shadow.png */,
-				C954563518B1617C00615C76 /* Thumb_Far_Shadow@2x.png */,
-				C954563618B1617C00615C76 /* Thumb_Near_Shadow.png */,
-				C954563718B1617C00615C76 /* Thumb_Near_Shadow@2x.png */,
-			);
-			name = Assets;
-			path = UISlider/Assets;
-			sourceTree = SOURCE_ROOT;
 		};
 		C954564118B187BA00615C76 /* Parallax Perspective View */ = {
 			isa = PBXGroup;
@@ -227,6 +200,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C97FB6E118AD7BFC00800FA9 /* Build configuration list for PBXNativeTarget "MotionUIControls" */;
 			buildPhases = (
+				C9E3DE3718B729A600946E6E /* Asset Generation */,
 				C97FB6A818AD7BFC00800FA9 /* Sources */,
 				C97FB6A918AD7BFC00800FA9 /* Frameworks */,
 				C97FB6AA18AD7BFC00800FA9 /* Resources */,
@@ -298,16 +272,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C97FB6C618AD7BFC00800FA9 /* Main_iPad.storyboard in Resources */,
-				C954563C18B1617D00615C76 /* Thumb_Near_Shadow.png in Resources */,
-				C954563B18B1617D00615C76 /* Thumb_Far_Shadow@2x.png in Resources */,
-				C954563A18B1617D00615C76 /* Thumb_Far_Shadow.png in Resources */,
 				C97FB6CB18AD7BFC00800FA9 /* Images.xcassets in Resources */,
-				C954563818B1617D00615C76 /* Thumb.png in Resources */,
-				C954563918B1617D00615C76 /* Thumb@2x.png in Resources */,
 				C97FB6C318AD7BFC00800FA9 /* Main_iPhone.storyboard in Resources */,
 				C97FB6BA18AD7BFC00800FA9 /* InfoPlist.strings in Resources */,
 				C9E3DE3218B7285400946E6E /* MTZSlider.xcassets in Resources */,
-				C954563D18B1617D00615C76 /* Thumb_Near_Shadow@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,12 +289,31 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		C9E3DE3718B729A600946E6E /* Asset Generation */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/MTZSlider.xcassets",
+			);
+			name = "Asset Generation";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/../UISlider",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "objc-assetgen";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C97FB6A818AD7BFC00800FA9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9E3DE3518B728EB00946E6E /* MTZSliderCatalog.m in Sources */,
+				C9E3DE3A18B72A7600946E6E /* MTZSliderCatalog.m in Sources */,
 				C954562F18B1614500615C76 /* MTZSlider.m in Sources */,
 				C97FB6C018AD7BFC00800FA9 /* MTZAppDelegate.m in Sources */,
 				C97FB6BC18AD7BFC00800FA9 /* main.m in Sources */,

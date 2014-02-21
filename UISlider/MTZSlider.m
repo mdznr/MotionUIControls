@@ -75,11 +75,11 @@
 	[self setThumbImage:[MTZSliderCatalog thumbImage] forState:UIControlStateNormal];
 	
 	// Near shadow image view.
-	_nearShadowView = [[UIImageView alloc] initWithImage:[MTZSliderCatalog thumb_Near_ShadowImage]];
+	_nearShadowView = [[UIImageView alloc] initWithImage:[MTZSliderCatalog nearShadowImage]];
 	[self insertSubview:_nearShadowView belowSubview:self.thumbView];
 	
 	// Far shadow image view.
-	_farShadowView = [[UIImageView alloc] initWithImage:[MTZSliderCatalog thumb_Far_ShadowImage]];
+	_farShadowView = [[UIImageView alloc] initWithImage:[MTZSliderCatalog farShadowImage]];
 	[self insertSubview:_farShadowView belowSubview:_nearShadowView];
 	
 	[self synchronizeThumbViewAndShadows];

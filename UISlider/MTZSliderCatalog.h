@@ -8,8 +8,8 @@
 
 @interface MTZSliderCatalog : NSObject
 
++ (UIImage *)farShadowImage;
++ (UIImage *)nearShadowImage;
 + (UIImage *)thumbImage;
-+ (UIImage *)thumb_Far_ShadowImage;
-+ (UIImage *)thumb_Near_ShadowImage;
 
 @end
