@@ -292,19 +292,17 @@
 /* Begin PBXShellScriptBuildPhase section */
 		C9E3DE3718B729A600946E6E /* Asset Generation */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/MTZSlider.xcassets",
 			);
 			name = "Asset Generation";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/../UISlider",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "objc-assetgen";
+			shellScript = "#objc-assetgen -o UISlider UISlider/MTZSlider.xcassets\nobjc-assetgen -o /Users/matt/Dropbox/github/MotionUIControls/UISlider/ /Users/matt/Dropbox/github/MotionUIControls/UISlider/MTZSlider.xcassets";
 		};
 /* End PBXShellScriptBuildPhase section */
 
