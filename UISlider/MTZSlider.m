@@ -7,7 +7,6 @@
 //
 
 #import "MTZSlider.h"
-
 #import "MTZSliderCatalog.h"
 
 /// Enable parallax effect on thumb view.
@@ -32,7 +31,6 @@
 
 
 @implementation MTZSlider
-
 
 #pragma mark - Creating & Deallocating
 
