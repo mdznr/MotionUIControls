@@ -12,6 +12,9 @@
 
 #import <QuartzCore/QuartzCore.h>
 
+// If defined, automatically animate, else, use motion effects.
+//#define AUTOMATICALLY_ANIMATE
+
 @interface MTZViewController ()
 
 @property (weak, nonatomic) IBOutlet MTZPerspectiveView *perspectiveView;
@@ -30,7 +33,11 @@
 {
 	// If iPad, automatically animate.
 	if ( [UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad ) {
+#ifdef AUTOMATICALLY_ANIMATE
 		[self animatePerspectiveView];
+#else
+		self.perspectiveView.perspectiveType = MTZPerspectiveTypeDevice;
+#endif
 	}
 }
 
