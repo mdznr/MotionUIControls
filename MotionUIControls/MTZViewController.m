@@ -28,9 +28,14 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-	[self animatePerspectiveView];
+	// If iPad, automatically animate.
+	if ( [UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad ) {
+		[self animatePerspectiveView];
+	}
 }
 
+// Automatically animate the perspective view.
+#warning Animation of perspective view does not recreate Motion Effects.
 - (void)animatePerspectiveView
 {
 	// Clear out motion effects
@@ -84,7 +89,9 @@
 - (void)viewDidDisappear:(BOOL)animated
 {
 	// Remove possible looping animation.
-	[self.perspectiveView.layer removeAllAnimations];
+	if ( [UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad ) {
+		[self.perspectiveView.layer removeAllAnimations];
+	}
 }
 
 - (BOOL)prefersStatusBarHidden

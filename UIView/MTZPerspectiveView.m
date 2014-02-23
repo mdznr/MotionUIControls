@@ -8,6 +8,8 @@
 
 #import "MTZPerspectiveView.h"
 
+#define SHOULD_RASTERIZE
+
 @implementation MTZPerspectiveView
 
 #pragma mark - Initialization
@@ -41,11 +43,8 @@
 
 - (void)__MTZPerspectiveView_setUp
 {
-	// Resolves issues with jagged lines.
-	self.layer.shouldRasterize = YES;
-	
 	// Default perspective type
-	[self setPerspectiveType:MTZPerspectiveTypeDevice];
+	[self setPerspectiveType:MTZPerspectiveTypeDefault];
 }
 
 CATransform3D makeSkew(CGFloat x, CGFloat y)
@@ -59,15 +58,27 @@ CATransform3D makeSkew(CGFloat x, CGFloat y)
 {
 	_perspectiveType = perspectiveType;
 	
-	int multiplier = 0;
-	if ( _perspectiveType == MTZPerspectiveTypeUser )  {
-		multiplier = -1;
-	} else if ( _perspectiveType == MTZPerspectiveTypeDevice ) {
-		multiplier = 1;
-	}
-	
 	// Clear out motion effects.
 	self.motionEffects = nil;
+	
+	// Determine multiplier, or exit early.
+	int multiplier = 0;
+	if ( _perspectiveType == MTZPerspectiveTypeUser )  {
+#ifdef SHOULD_RASTERIZE
+		self.layer.shouldRasterize = YES;
+#endif
+		multiplier = -1;
+	} else if ( _perspectiveType == MTZPerspectiveTypeDevice ) {
+#ifdef SHOULD_RASTERIZE
+		self.layer.shouldRasterize = YES;
+#endif
+		multiplier = 1;
+	} else {
+#ifdef SHOULD_RASTERIZE
+		self.layer.shouldRasterize = NO;
+#endif
+		return;
+	}
 	
 	// Horizontal motion
 	UIInterpolatingMotionEffect *horizontal = [[UIInterpolatingMotionEffect alloc] initWithKeyPath:@"layer.transform" type:UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis];
