@@ -1,13 +1,13 @@
 //
-//  MTZSlider.m
+//  MTZSwitch.m
 //  MotionUIControls
 //
-//  Created by Matt Zanchelli on 2/13/14.
+//  Created by Matt Zanchelli on 2/24/14.
 //  Copyright (c) 2014 Matt Zanchelli. All rights reserved.
 //
 
-#import "MTZSlider.h"
-#import "MTZSliderCatalog.h"
+#import "MTZSwitch.h"
+#import "MTZSwitchCatalog.h"
 
 /// Enable parallax effect on thumb view.
 #define THUMB_VIEW_PARALLAX
@@ -16,7 +16,7 @@
 #define NEAR_SHADOW_VIEW_PARALLAX
 
 
-@interface MTZSlider ()
+@interface MTZSwitch ()
 
 /// The thumb view.
 @property (strong, nonatomic, readonly) UIView *thumbView;
@@ -30,7 +30,7 @@
 @end
 
 
-@implementation MTZSlider
+@implementation MTZSwitch
 
 #pragma mark - Creating & Deallocating
 
@@ -38,7 +38,7 @@
 {
 	self = [super init];
 	if ( self ) {
-		[self _MTZSlider_setUp];
+		[self _MTZSwitch_setUp];
 	}
 	return self;
 }
@@ -47,7 +47,7 @@
 {
 	self = [super initWithCoder:aDecoder];
 	if ( self ) {
-		[self _MTZSlider_setUp];
+		[self _MTZSwitch_setUp];
 	}
 	return self;
 }
@@ -56,28 +56,29 @@
 {
 	self = [super initWithFrame:frame];
 	if ( self ) {
-		[self _MTZSlider_setUp];
+		[self _MTZSwitch_setUp];
 	}
 	return self;
 }
 
-- (void)_MTZSlider_setUp
+- (void)_MTZSwitch_setUp
 {
 	// Need to perform after delay, otherwise UISlider views are uninitialized.
-	[self performSelector:@selector(_MTZSlider_setUp_isNowReady) withObject:nil afterDelay:DBL_MIN];
+	[self performSelector:@selector(_MTZSwitch_setUp_isNowReady) withObject:nil afterDelay:DBL_MIN];
 }
 
-- (void)_MTZSlider_setUp_isNowReady
+- (void)_MTZSwitch_setUp_isNowReady
 {
 	// Use custom image for thumb view.
-	[self setThumbImage:[MTZSliderCatalog sliderThumbImage] forState:UIControlStateNormal];
+#warning TODO: Use resizable image (active state)
+	[self setThumbImage:[MTZSwitchCatalog switchThumbImage]];
 	
 	// Near shadow image view.
-	_nearShadowView = [[UIImageView alloc] initWithImage:[MTZSliderCatalog sliderThumbNearShadowImage]];
-	[self insertSubview:_nearShadowView belowSubview:self.thumbView];
+	_nearShadowView = [[UIImageView alloc] initWithImage:[MTZSwitchCatalog switchThumbNearShadowImage]];
+	[self insertSubview:_nearShadowView belowSubview:[self valueForKeyPath:@"_control"]];
 	
 	// Far shadow image view.
-	_farShadowView = [[UIImageView alloc] initWithImage:[MTZSliderCatalog sliderThumbFarShadowImage]];
+	_farShadowView = [[UIImageView alloc] initWithImage:[MTZSwitchCatalog switchThumbFarShadowImage]];
 	[self insertSubview:_farShadowView belowSubview:_nearShadowView];
 	
 	[self synchronizeThumbViewAndShadows];
@@ -99,11 +100,43 @@
 
 #pragma mark - Properties
 
-static NSString *thumbViewKeyPath = @"_thumbView";
+/*
+ 
+ po [self _ivarDescription]
+ ...
+ _control (UIView<_UISwitchInternalViewProtocol>*): <_UISwitchInternalViewNeueStyle1: 0x10980a390>
+ ...
+ 
+ 
+ po [self valueForKeyPath:@"_control"]
+ <_UISwitchInternalViewNeueStyle1: 0x10980a390; frame = (0 0; 51 31); gestureRecognizers = <NSArray: 0x10980bab0>; layer = <CALayer: 0x10980a4c0>>
+ 
+ 
+ po [[self valueForKeyPath:@"_control"] subviews]
+ <__NSArrayM 0x10980c2f0>(
+ <UIView: 0x10980a860; frame = (35.5 0; 15.5 31); clipsToBounds = YES; layer = <CALayer: 0x10980a920>>,
+ <UIView: 0x10980a780; frame = (0 0; 35.5 31); clipsToBounds = YES; layer = <CALayer: 0x10980a840>>,
+ <UIView: 0x10980b340; frame = (0 0; 51 31); layer = <CALayer: 0x10980b400>>,
+ <UIImageView: 0x10980ad40; frame = (7 -6; 57 43.5); opaque = NO; userInteractionEnabled = NO; layer = <CALayer: 0x10980ae70>>
+ )
+ 
+ */
 
 - (UIView *)thumbView
 {
-	return (UIView *) [self valueForKeyPath:thumbViewKeyPath];
+	UIView *thumbView;
+	NSArray *subviews = [[self valueForKeyPath:@"_control"] subviews];
+	for ( UIView *view in subviews ) {
+		if ( [view isKindOfClass:[UIImageView class]] ) {
+			thumbView = view;
+		}
+	}
+	return thumbView;
+}
+
+- (void)setThumbImage:(UIImage *)image
+{
+	((UIImageView *) self.thumbView).image = image;
 }
 
 

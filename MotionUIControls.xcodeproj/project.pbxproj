@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		C93FCFB218B2EB1F00B898BA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C93FCFB118B2EB1F00B898BA /* QuartzCore.framework */; };
+		C95292E418BB16B60059F06F /* MTZSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = C95292E318BB16B60059F06F /* MTZSwitch.m */; };
+		C95292E918BB16E40059F06F /* MTZSwitch.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C95292E818BB16E40059F06F /* MTZSwitch.xcassets */; };
+		C95292EC18BB170A0059F06F /* MTZSwitchCatalog.m in Sources */ = {isa = PBXBuildFile; fileRef = C95292EB18BB170A0059F06F /* MTZSwitchCatalog.m */; };
 		C954562F18B1614500615C76 /* MTZSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = C954562E18B1614500615C76 /* MTZSlider.m */; };
 		C954564018B187B700615C76 /* MTZPerspectiveView.m in Sources */ = {isa = PBXBuildFile; fileRef = C954563F18B187B700615C76 /* MTZPerspectiveView.m */; };
 		C97FB6B018AD7BFC00800FA9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C97FB6AF18AD7BFC00800FA9 /* Foundation.framework */; };
@@ -41,6 +44,11 @@
 
 /* Begin PBXFileReference section */
 		C93FCFB118B2EB1F00B898BA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		C95292E218BB16B60059F06F /* MTZSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MTZSwitch.h; path = UISwitch/MTZSwitch.h; sourceTree = SOURCE_ROOT; };
+		C95292E318BB16B60059F06F /* MTZSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MTZSwitch.m; path = UISwitch/MTZSwitch.m; sourceTree = SOURCE_ROOT; };
+		C95292E818BB16E40059F06F /* MTZSwitch.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = MTZSwitch.xcassets; path = ../UISwitch/MTZSwitch.xcassets; sourceTree = "<group>"; };
+		C95292EA18BB170A0059F06F /* MTZSwitchCatalog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MTZSwitchCatalog.h; path = UISwitch/MTZSwitchCatalog.h; sourceTree = SOURCE_ROOT; };
+		C95292EB18BB170A0059F06F /* MTZSwitchCatalog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MTZSwitchCatalog.m; path = UISwitch/MTZSwitchCatalog.m; sourceTree = SOURCE_ROOT; };
 		C954562D18B1614500615C76 /* MTZSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MTZSlider.h; path = UISlider/MTZSlider.h; sourceTree = SOURCE_ROOT; };
 		C954562E18B1614500615C76 /* MTZSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MTZSlider.m; path = UISlider/MTZSlider.m; sourceTree = SOURCE_ROOT; };
 		C954563E18B187B700615C76 /* MTZPerspectiveView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MTZPerspectiveView.h; path = UIView/MTZPerspectiveView.h; sourceTree = SOURCE_ROOT; };
@@ -95,6 +103,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C95292E518BB16C10059F06F /* UISwitch */ = {
+			isa = PBXGroup;
+			children = (
+				C95292E218BB16B60059F06F /* MTZSwitch.h */,
+				C95292E318BB16B60059F06F /* MTZSwitch.m */,
+				C95292E818BB16E40059F06F /* MTZSwitch.xcassets */,
+				C95292EA18BB170A0059F06F /* MTZSwitchCatalog.h */,
+				C95292EB18BB170A0059F06F /* MTZSwitchCatalog.m */,
+			);
+			name = UISwitch;
+			sourceTree = "<group>";
+		};
 		C954563018B1614900615C76 /* UISlider */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +178,7 @@
 				C97FB6C818AD7BFC00800FA9 /* MTZViewController.m */,
 				C954564118B187BA00615C76 /* Parallax Perspective View */,
 				C954563018B1614900615C76 /* UISlider */,
+				C95292E518BB16C10059F06F /* UISwitch */,
 				C97FB6CA18AD7BFC00800FA9 /* Images.xcassets */,
 				C97FB6B618AD7BFC00800FA9 /* Supporting Files */,
 			);
@@ -276,6 +297,7 @@
 				C97FB6C318AD7BFC00800FA9 /* Main_iPhone.storyboard in Resources */,
 				C97FB6BA18AD7BFC00800FA9 /* InfoPlist.strings in Resources */,
 				C9E3DE3218B7285400946E6E /* MTZSlider.xcassets in Resources */,
+				C95292E918BB16E40059F06F /* MTZSwitch.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,7 +324,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# MTZSlider\nobjc-assetgen -o UISlider/ ../UISlider/MTZSlider.xcassets";
+			shellScript = "# MTZSlider\nobjc-assetgen -o UISlider/ ../UISlider/MTZSlider.xcassets\n\n# MTZSwitch\nobjc-assetgen -o UISwitch/ ../UISwitch/MTZSwitch.xcassets";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -314,7 +336,9 @@
 				C9E3DE3A18B72A7600946E6E /* MTZSliderCatalog.m in Sources */,
 				C954562F18B1614500615C76 /* MTZSlider.m in Sources */,
 				C97FB6C018AD7BFC00800FA9 /* MTZAppDelegate.m in Sources */,
+				C95292E418BB16B60059F06F /* MTZSwitch.m in Sources */,
 				C97FB6BC18AD7BFC00800FA9 /* main.m in Sources */,
+				C95292EC18BB170A0059F06F /* MTZSwitchCatalog.m in Sources */,
 				C97FB6C918AD7BFC00800FA9 /* MTZViewController.m in Sources */,
 				C954564018B187B700615C76 /* MTZPerspectiveView.m in Sources */,
 			);
