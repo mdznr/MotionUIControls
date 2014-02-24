@@ -8,6 +8,11 @@
 
 @implementation MTZSwitchCatalog
 
++ (UIImage *)redRectImage;
+{
+    return [UIImage imageNamed:@"RedRect"];
+}
+
 + (UIImage *)switchThumbFarShadowImage;
 {
     return [UIImage imageNamed:@"SwitchThumbFarShadow"];

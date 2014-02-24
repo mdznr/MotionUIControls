@@ -71,7 +71,10 @@
 {
 	// Use custom image for thumb view.
 #warning TODO: Use resizable image (active state)
-	[self setThumbImage:[MTZSwitchCatalog switchThumbImage]];
+	UIImage *resizableThumbImage = [MTZSwitchCatalog switchThumbImage];
+	resizableThumbImage = [resizableThumbImage resizableImageWithCapInsets:UIEdgeInsetsMake(43, 57, 44, 57)];
+	[self setThumbImage:resizableThumbImage];
+//	[self setThumbImage:[MTZSwitchCatalog redRectImage]];
 	
 	// Near shadow image view.
 	_nearShadowView = [[UIImageView alloc] initWithImage:[MTZSwitchCatalog switchThumbNearShadowImage]];
@@ -206,6 +209,8 @@ static int nearShadowViewParallaxFraction = 1/4;
 /// For use in KVO contexts.
 static void *ThumbViewFrameContext = &ThumbViewFrameContext;
 
+#warning The thumb view is actually the image view.
+#warning The shadows should stretch on active state of thumb.
 - (void)observeThumbViewFrame
 {
 	// Observe frame of the thumb view.

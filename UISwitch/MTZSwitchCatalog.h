@@ -8,6 +8,7 @@
 
 @interface MTZSwitchCatalog : NSObject
 
++ (UIImage *)redRectImage;
 + (UIImage *)switchThumbFarShadowImage;
 + (UIImage *)switchThumbImage;
 + (UIImage *)switchThumbNearShadowImage;
