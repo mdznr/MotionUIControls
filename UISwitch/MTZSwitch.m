@@ -78,11 +78,11 @@
 	
 	// Near shadow image view.
 	_nearShadowView = [[UIImageView alloc] initWithImage:[MTZSwitchCatalog switchThumbNearShadowImage]];
-	[self insertSubview:_nearShadowView belowSubview:[self valueForKeyPath:@"_control"]];
+	[[self valueForKeyPath:@"_control"] insertSubview:_nearShadowView belowSubview:[self thumbView]];
 	
 	// Far shadow image view.
 	_farShadowView = [[UIImageView alloc] initWithImage:[MTZSwitchCatalog switchThumbFarShadowImage]];
-	[self insertSubview:_farShadowView belowSubview:_nearShadowView];
+	[[self valueForKeyPath:@"_control"] insertSubview:_farShadowView belowSubview:_nearShadowView];
 	
 	[self synchronizeThumbViewAndShadows];
 	
