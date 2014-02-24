@@ -8,19 +8,19 @@
 
 @implementation MTZSliderCatalog
 
-+ (UIImage *)farShadowImage;
++ (UIImage *)sliderThumbFarShadowImage;
 {
-    return [UIImage imageNamed:@"FarShadow"];
+    return [UIImage imageNamed:@"SliderThumbFarShadow"];
 }
 
-+ (UIImage *)nearShadowImage;
++ (UIImage *)sliderThumbImage;
 {
-    return [UIImage imageNamed:@"NearShadow"];
+    return [UIImage imageNamed:@"SliderThumb"];
 }
 
-+ (UIImage *)thumbImage;
++ (UIImage *)sliderThumbNearShadowImage;
 {
-    return [UIImage imageNamed:@"Thumb"];
+    return [UIImage imageNamed:@"SliderThumbNearShadow"];
 }
 
 @end

@@ -70,14 +70,14 @@
 - (void)_MTZSlider_setUp_isNowReady
 {
 	// Use custom image for thumb view.
-	[self setThumbImage:[MTZSliderCatalog thumbImage] forState:UIControlStateNormal];
+	[self setThumbImage:[MTZSliderCatalog sliderThumbImage] forState:UIControlStateNormal];
 	
 	// Near shadow image view.
-	_nearShadowView = [[UIImageView alloc] initWithImage:[MTZSliderCatalog nearShadowImage]];
+	_nearShadowView = [[UIImageView alloc] initWithImage:[MTZSliderCatalog sliderThumbNearShadowImage]];
 	[self insertSubview:_nearShadowView belowSubview:self.thumbView];
 	
 	// Far shadow image view.
-	_farShadowView = [[UIImageView alloc] initWithImage:[MTZSliderCatalog farShadowImage]];
+	_farShadowView = [[UIImageView alloc] initWithImage:[MTZSliderCatalog sliderThumbFarShadowImage]];
 	[self insertSubview:_farShadowView belowSubview:_nearShadowView];
 	
 	[self synchronizeThumbViewAndShadows];
