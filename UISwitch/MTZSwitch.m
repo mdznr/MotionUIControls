@@ -18,6 +18,9 @@
 
 @interface MTZSwitch ()
 
+/// The image for the thumb.
+@property (strong, nonatomic) UIImage *thumbImage;
+
 /// The thumb view.
 @property (strong, nonatomic, readonly) UIView *thumbView;
 
@@ -70,7 +73,7 @@
 - (void)_MTZSwitch_setUp_isNowReady
 {
 	// Use custom image for thumb view.
-	[self setThumbImage:[MTZSwitchCatalog switchThumbImage]];
+	self.thumbImage = [MTZSwitchCatalog switchThumbImage];
 	
 	// Near shadow image view.
 	_nearShadowView = [[UIImageView alloc] initWithImage:[MTZSwitchCatalog switchThumbNearShadowImage]];
@@ -136,6 +139,11 @@
 - (void)setThumbImage:(UIImage *)image
 {
 	((UIImageView *) self.thumbView).image = image;
+}
+
+- (UIImage *)thumbImage
+{
+	return ((UIImageView *) self.thumbView).image;
 }
 
 
