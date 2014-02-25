@@ -75,11 +75,11 @@
 	// Use custom image for thumb view.
 	self.thumbImage = [MTZSwitchCatalog switchThumbImage];
 	
-	// Near shadow image view.
+	// Add the near shadow image view.
 	_nearShadowView = [[UIImageView alloc] initWithImage:[MTZSwitchCatalog switchThumbNearShadowImage]];
 	[[self valueForKeyPath:@"_control"] insertSubview:_nearShadowView belowSubview:[self thumbView]];
 	
-	// Far shadow image view.
+	// Add the far shadow image view.
 	_farShadowView = [[UIImageView alloc] initWithImage:[MTZSwitchCatalog switchThumbFarShadowImage]];
 	[[self valueForKeyPath:@"_control"] insertSubview:_farShadowView belowSubview:_nearShadowView];
 	
@@ -126,14 +126,17 @@
 
 - (UIView *)thumbView
 {
-	UIView *thumbView;
 	NSArray *subviews = [[self valueForKeyPath:@"_control"] subviews];
+	
+	// Find and return the first image view (assuming there's only one).
 	for ( UIView *view in subviews ) {
 		if ( [view isKindOfClass:[UIImageView class]] ) {
-			thumbView = view;
+			return view;
 		}
 	}
-	return thumbView;
+	
+	// Could not find a subview of UIImageView in _control.
+	return nil;
 }
 
 - (void)setThumbImage:(UIImage *)image
