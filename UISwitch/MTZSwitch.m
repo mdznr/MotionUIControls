@@ -22,7 +22,7 @@
 @property (strong, nonatomic) UIImage *thumbImage;
 
 /// The thumb view.
-@property (strong, nonatomic, readonly) UIView *thumbView;
+@property (strong, nonatomic) UIView *thumbView;
 
 /// The closer shadow view with little diffusion.
 @property (strong, nonatomic) UIImageView *nearShadowView;
@@ -126,16 +126,21 @@
 
 - (UIView *)thumbView
 {
+	// If already found once, return it early.
+	if ( _thumbView != nil ) return _thumbView;
+	
+	// Find thumb view.
 	NSArray *subviews = [[self valueForKeyPath:@"_control"] subviews];
 	
 	// Find and return the first image view (assuming there's only one).
 	for ( UIView *view in subviews ) {
 		if ( [view isKindOfClass:[UIImageView class]] ) {
-			return view;
+			self.thumbView = view;
+			return self.thumbView;
 		}
 	}
 	
-	// Could not find a subview of UIImageView in _control.
+	// Could not find the thumb view.
 	return nil;
 }
 
