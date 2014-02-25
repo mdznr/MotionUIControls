@@ -70,8 +70,7 @@
 - (void)_MTZSwitch_setUp_isNowReady
 {
 	// Use custom image for thumb view.
-	UIImage *resizableThumbImage = [MTZSwitchCatalog switchThumbImage];
-	[self setThumbImage:resizableThumbImage];
+	[self setThumbImage:[MTZSwitchCatalog switchThumbImage]];
 	
 	// Near shadow image view.
 	_nearShadowView = [[UIImageView alloc] initWithImage:[MTZSwitchCatalog switchThumbNearShadowImage]];
