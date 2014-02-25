@@ -90,13 +90,7 @@
 
 - (void)dealloc
 {
-	// Stop observing thumb view frame.
-	@try {
-		[self.thumbView removeObserver:self
-							forKeyPath:@"frame"
-							   context:ThumbViewFrameContext];
-	} @catch (NSException *exception) {
-	}
+	[self stopObservingThumbViewFrame];
 }
 
 
@@ -129,18 +123,18 @@
 	// If already found once, return it early.
 	if ( _thumbView != nil ) return _thumbView;
 	
-	// Find thumb view.
+	// The thumbview is a subview.
 	NSArray *subviews = [[self valueForKeyPath:@"_control"] subviews];
 	
 	// Find and return the first image view (assuming there's only one).
 	for ( UIView *view in subviews ) {
 		if ( [view isKindOfClass:[UIImageView class]] ) {
-			self.thumbView = view;
+			_thumbView = view;
 			return self.thumbView;
 		}
 	}
 	
-	// Could not find the thumb view.
+	// Could not find a subview of UIImageView in _control.
 	return nil;
 }
 
@@ -206,6 +200,7 @@ static int nearShadowViewParallaxFraction = 1/4;
 
 - (void)thumbViewFrameChanged
 {
+	NSLog(@"%@", NSStringFromCGRect(self.thumbView.frame) );
 	[self synchronizeThumbViewAndShadows];
 }
 
@@ -219,17 +214,28 @@ static int nearShadowViewParallaxFraction = 1/4;
 #pragma mark - Key Value Observing
 
 /// For use in KVO contexts.
-static void *ThumbViewFrameContext = &ThumbViewFrameContext;
+static void *MTZSliderThumbViewFrameContext = &MTZSliderThumbViewFrameContext;
 
 #warning The thumb view is actually the image view.
 #warning The shadows should stretch on active state of thumb.
 - (void)observeThumbViewFrame
 {
+	NSLog(@"%@", NSStringFromCGRect(self.thumbView.frame));
 	// Observe frame of the thumb view.
 	[self.thumbView addObserver:self
 					 forKeyPath:@"frame"
 						options:NSKeyValueObservingOptionNew
-						context:ThumbViewFrameContext];
+						context:MTZSliderThumbViewFrameContext];
+}
+
+- (void)stopObservingThumbViewFrame
+{
+	@try {
+		[self.thumbView removeObserver:self
+							forKeyPath:@"frame"
+							   context:MTZSliderThumbViewFrameContext];
+	} @catch (NSException *exception) {
+	}
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath
@@ -237,7 +243,7 @@ static void *ThumbViewFrameContext = &ThumbViewFrameContext;
 						change:(NSDictionary *)change
 					   context:(void *)context
 {
-	if ( context == ThumbViewFrameContext ) {
+	if ( context == MTZSliderThumbViewFrameContext ) {
 		if ( [keyPath isEqualToString:@"frame"] ) {
 			[self thumbViewFrameChanged];
 		}
