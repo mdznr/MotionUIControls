@@ -1,14 +1,36 @@
 {
   "images" : [
     {
+      "resizing" : {
+        "mode" : "3-part-horizontal",
+        "center" : {
+          "mode" : "fill",
+          "width" : 1
+        },
+        "capInsets" : {
+          "right" : 28,
+          "left" : 28
+        }
+      },
       "idiom" : "universal",
-      "scale" : "1x",
-      "filename" : "SwitchThumb.png"
+      "filename" : "SwitchThumb.png",
+      "scale" : "1x"
     },
     {
+      "resizing" : {
+        "mode" : "3-part-horizontal",
+        "center" : {
+          "mode" : "fill",
+          "width" : 1
+        },
+        "capInsets" : {
+          "right" : 57,
+          "left" : 56
+        }
+      },
       "idiom" : "universal",
-      "scale" : "2x",
-      "filename" : "SwitchThumb@2x.png"
+      "filename" : "SwitchThumb@2x.png",
+      "scale" : "2x"
     }
   ],
   "info" : {
