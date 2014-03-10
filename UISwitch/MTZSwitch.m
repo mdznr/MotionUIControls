@@ -77,17 +77,17 @@
 {
 	// Use custom image for thumb view.
 	self.thumbImage = [MTZSwitchCatalog switchThumbImage];
-	
+
 	// Add the near shadow image view.
 	_nearShadowView = [[UIImageView alloc] initWithImage:[MTZSwitchCatalog switchThumbNearShadowImage]];
 	[[self valueForKeyPath:@"_control"] insertSubview:_nearShadowView belowSubview:[self thumbView]];
-	
+
 	// Add the far shadow image view.
 	_farShadowView = [[UIImageView alloc] initWithImage:[MTZSwitchCatalog switchThumbFarShadowImage]];
 	[[self valueForKeyPath:@"_control"] insertSubview:_farShadowView belowSubview:_nearShadowView];
-	
+
 	[self synchronizeThumbViewAndShadows];
-	
+
 	[self setUpThumbViewMotionEffects];
 }
 
@@ -98,28 +98,6 @@
 
 
 #pragma mark - Properties
-
-/*
- 
- po [self _ivarDescription]
- ...
- _control (UIView<_UISwitchInternalViewProtocol>*): <_UISwitchInternalViewNeueStyle1: 0x10980a390>
- ...
- 
- 
- po [self valueForKeyPath:@"_control"]
- <_UISwitchInternalViewNeueStyle1: 0x10980a390; frame = (0 0; 51 31); gestureRecognizers = <NSArray: 0x10980bab0>; layer = <CALayer: 0x10980a4c0>>
- 
- 
- po [[self valueForKeyPath:@"_control"] subviews]
- <__NSArrayM 0x10980c2f0>(
- <UIView: 0x10980a860; frame = (35.5 0; 15.5 31); clipsToBounds = YES; layer = <CALayer: 0x10980a920>>,
- <UIView: 0x10980a780; frame = (0 0; 35.5 31); clipsToBounds = YES; layer = <CALayer: 0x10980a840>>,
- <UIView: 0x10980b340; frame = (0 0; 51 31); layer = <CALayer: 0x10980b400>>,
- <UIImageView: 0x10980ad40; frame = (7 -6; 57 43.5); opaque = NO; userInteractionEnabled = NO; layer = <CALayer: 0x10980ae70>>
- )
- 
- */
 
 - (UIView *)thumbView
 {
@@ -155,30 +133,18 @@
 #pragma mark - Motion Effects
 
 /// The absolute maximum distance to translate the thumb view.
-#if defined(THUMB_VIEW_PARALLAX) || defined(NEAR_SHADOW_VIEW_PARALLAX) || defined(FAR_SHADOW_VIEW_PARALLAX)
-static int thumbViewParallaxAbsoluteMax = 1;
+#ifdef THUMB_VIEW_PARALLAX
+static int thumbViewParallaxAbsoluteMax = 0;
 #endif
 
 #ifdef NEAR_SHADOW_VIEW_PARALLAX
 /// Multiplied by thumbViewParallaxAbsoluteMax.
-static int nearShadowViewParallaxMultiple =
-#ifdef THUMB_VIEW_PARALLAX
-1/4
-#else
-1
-#endif
-;
+static int nearShadowViewParallaxMultiple = -4;
 #endif
 
 #ifdef FAR_SHADOW_VIEW_PARALLAX
 /// Multipled by thumbViewParallaxAbsoluteMax.
-static int farShadowViewParallaxMultiple =
-#ifdef THUMB_VIEW_PARALLAX
-0
-#else
-4
-#endif
-;
+static int farShadowViewParallaxMultiple = -5;
 #endif
 
 - (void)setUpThumbViewMotionEffects
@@ -188,49 +154,49 @@ static int farShadowViewParallaxMultiple =
 	UIInterpolatingMotionEffect *horizontal = [[UIInterpolatingMotionEffect alloc]
 			initWithKeyPath:@"layer.transform" type:UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis];
 	horizontal.minimumRelativeValue = [NSValue valueWithCATransform3D:CATransform3DMakeTranslation(-thumbViewParallaxAbsoluteMax, 0, 0)];
-	horizontal.maximumRelativeValue = [NSValue valueWithCATransform3D:CATransform3DMakeTranslation(thumbViewParallaxAbsoluteMax, 0, 0)];
+	horizontal.maximumRelativeValue = [NSValue valueWithCATransform3D:CATransform3DMakeTranslation( thumbViewParallaxAbsoluteMax, 0, 0)];
 	[self.thumbView addMotionEffect:horizontal];
-	
+
 	// Vertical motion
 	UIInterpolatingMotionEffect *vertical = [[UIInterpolatingMotionEffect alloc]
 			initWithKeyPath:@"layer.transform" type:UIInterpolatingMotionEffectTypeTiltAlongVerticalAxis];
 	vertical.minimumRelativeValue = [NSValue valueWithCATransform3D:CATransform3DMakeTranslation(0, -thumbViewParallaxAbsoluteMax, 0)];
-	vertical.maximumRelativeValue = [NSValue valueWithCATransform3D:CATransform3DMakeTranslation(0, thumbViewParallaxAbsoluteMax, 0)];
+	vertical.maximumRelativeValue = [NSValue valueWithCATransform3D:CATransform3DMakeTranslation(0,  thumbViewParallaxAbsoluteMax, 0)];
 	[self.thumbView addMotionEffect:vertical];
 #endif
-	
+
 #ifdef NEAR_SHADOW_VIEW_PARALLAX
 	// Horizontal motion
 	UIInterpolatingMotionEffect *horizontalShadow = [[UIInterpolatingMotionEffect alloc]
 			initWithKeyPath:@"layer.transform" type:UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis];
-	horizontalShadow.minimumRelativeValue = [NSValue valueWithCATransform3D:CATransform3DMakeTranslation(-thumbViewParallaxAbsoluteMax * nearShadowViewParallaxMultiple, 0, 0)];
-	horizontalShadow.maximumRelativeValue = [NSValue valueWithCATransform3D:CATransform3DMakeTranslation(thumbViewParallaxAbsoluteMax * nearShadowViewParallaxMultiple, 0, 0)];
+	horizontalShadow.minimumRelativeValue = [NSValue valueWithCATransform3D:CATransform3DMakeTranslation(-nearShadowViewParallaxMultiple, 0, 0)];
+	horizontalShadow.maximumRelativeValue = [NSValue valueWithCATransform3D:CATransform3DMakeTranslation( nearShadowViewParallaxMultiple, 0, 0)];
 	[_nearShadowView addMotionEffect:horizontalShadow];
-	
+
 	// Vertical motion
 	UIInterpolatingMotionEffect *verticalShadow = [[UIInterpolatingMotionEffect alloc]
 			initWithKeyPath:@"layer.transform" type:UIInterpolatingMotionEffectTypeTiltAlongVerticalAxis];
-	verticalShadow.minimumRelativeValue = [NSValue valueWithCATransform3D:CATransform3DMakeTranslation(0, -thumbViewParallaxAbsoluteMax * nearShadowViewParallaxMultiple, 0)];
-	verticalShadow.maximumRelativeValue = [NSValue valueWithCATransform3D:CATransform3DMakeTranslation(0, thumbViewParallaxAbsoluteMax * nearShadowViewParallaxMultiple, 0)];
+	verticalShadow.minimumRelativeValue = [NSValue valueWithCATransform3D:CATransform3DMakeTranslation(0, -nearShadowViewParallaxMultiple, 0)];
+	verticalShadow.maximumRelativeValue = [NSValue valueWithCATransform3D:CATransform3DMakeTranslation(0,  nearShadowViewParallaxMultiple, 0)];
 	[_nearShadowView addMotionEffect:verticalShadow];
 #endif
-	
+
 #ifdef FAR_SHADOW_VIEW_PARALLAX
 	// Horizontal motion
 	UIInterpolatingMotionEffect *horizontalFarShadow = [[UIInterpolatingMotionEffect alloc]
 			initWithKeyPath:@"layer.transform" type:UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis];
-	horizontalFarShadow.minimumRelativeValue = [NSValue valueWithCATransform3D:CATransform3DMakeTranslation(-thumbViewParallaxAbsoluteMax * farShadowViewParallaxMultiple, 0, 0)];
-	horizontalFarShadow.maximumRelativeValue = [NSValue valueWithCATransform3D:CATransform3DMakeTranslation(thumbViewParallaxAbsoluteMax * farShadowViewParallaxMultiple, 0, 0)];
+	horizontalFarShadow.minimumRelativeValue = [NSValue valueWithCATransform3D:CATransform3DMakeTranslation(-farShadowViewParallaxMultiple, 0, 0)];
+	horizontalFarShadow.maximumRelativeValue = [NSValue valueWithCATransform3D:CATransform3DMakeTranslation( farShadowViewParallaxMultiple, 0, 0)];
 	[_farShadowView addMotionEffect:horizontalFarShadow];
-	
+
 	// Vertical motion
 	UIInterpolatingMotionEffect *verticalFarShadow = [[UIInterpolatingMotionEffect alloc]
 			initWithKeyPath:@"layer.transform" type:UIInterpolatingMotionEffectTypeTiltAlongVerticalAxis];
-	verticalFarShadow.minimumRelativeValue = [NSValue valueWithCATransform3D:CATransform3DMakeTranslation(0, -thumbViewParallaxAbsoluteMax * farShadowViewParallaxMultiple, 0)];
-	verticalFarShadow.maximumRelativeValue = [NSValue valueWithCATransform3D:CATransform3DMakeTranslation(0, thumbViewParallaxAbsoluteMax * farShadowViewParallaxMultiple, 0)];
+	verticalFarShadow.minimumRelativeValue = [NSValue valueWithCATransform3D:CATransform3DMakeTranslation(0, -farShadowViewParallaxMultiple, 0)];
+	verticalFarShadow.maximumRelativeValue = [NSValue valueWithCATransform3D:CATransform3DMakeTranslation(0,  farShadowViewParallaxMultiple, 0)];
 	[_farShadowView addMotionEffect:verticalFarShadow];
 #endif
-	
+
 	[self observeThumbViewFrame];
 }
 
