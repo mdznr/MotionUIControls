@@ -99,24 +99,11 @@
 
 #pragma mark - Properties
 
+static NSString *thumbViewKeyPath = @"_control._knobView";
+
 - (UIView *)thumbView
 {
-	// If already found once, return it early.
-	if ( _thumbView != nil ) return _thumbView;
-	
-	// The thumbview is a subview.
-	NSArray *subviews = [[self valueForKeyPath:@"_control"] subviews];
-	
-	// Find and return the first image view (assuming there's only one).
-	for ( UIView *view in subviews ) {
-		if ( [view isKindOfClass:[UIImageView class]] ) {
-			_thumbView = view;
-			return self.thumbView;
-		}
-	}
-	
-	// Could not find a subview of UIImageView in _control.
-	return nil;
+	return (UIImageView *) [self valueForKeyPath:thumbViewKeyPath];
 }
 
 - (void)setThumbImage:(UIImage *)image
@@ -134,7 +121,7 @@
 
 /// The absolute maximum distance to translate the thumb view.
 #ifdef THUMB_VIEW_PARALLAX
-static int thumbViewParallaxAbsoluteMax = 0;
+static int thumbViewParallaxAbsoluteMax = 1;
 #endif
 
 #ifdef NEAR_SHADOW_VIEW_PARALLAX
@@ -245,6 +232,7 @@ static void *MTZSliderThumbViewFrameContext = &MTZSliderThumbViewFrameContext;
 						change:(NSDictionary *)change
 					   context:(void *)context
 {
+	NSLog(@"Observe");
 	if ( context == MTZSliderThumbViewFrameContext ) {
 		if ( [keyPath isEqualToString:@"frame"] ) {
 			[self thumbViewFrameChanged];
