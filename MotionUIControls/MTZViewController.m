@@ -7,17 +7,24 @@
 //
 
 #import "MTZViewController.h"
-#import "MTZSlider.h"
+
 #import "MTZPerspectiveView.h"
+#import "MTZSlider.h"
+#import "MTZSwitch.h"
+#import "MTZDatePicker.h"
+#import "MTZPickerView.h"
 
 #import <QuartzCore/QuartzCore.h>
 
 // If defined, automatically animate, else, use motion effects.
 //#define AUTOMATICALLY_ANIMATE
 
-@interface MTZViewController ()
+@interface MTZViewController () <UIPickerViewDataSource, UIPickerViewDelegate>
 
 @property (weak, nonatomic) IBOutlet MTZPerspectiveView *perspectiveView;
+
+@property (weak, nonatomic) IBOutlet MTZDatePicker *datePicker;
+
 
 @end
 
@@ -110,6 +117,30 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+#pragma mark - UIPickerViewDataSource & UIPickerViewDelegate Protocols
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+	// 3 Columns.
+	return 3;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+	switch ( component ) {
+		case 0: return 12;
+		case 1: return 60;
+		case 2: return 2;
+		default: return 0;
+	}
+}
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+	return @"TEST";
 }
 
 @end

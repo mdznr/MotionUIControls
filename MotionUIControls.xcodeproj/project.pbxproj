@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C914B29118D73A7300EC9C80 /* MTZPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C914B29018D73A7300EC9C80 /* MTZPickerView.m */; };
+		C914B29518D73EF400EC9C80 /* MTZDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = C914B29418D73EF400EC9C80 /* MTZDatePicker.m */; };
 		C93FCFB218B2EB1F00B898BA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C93FCFB118B2EB1F00B898BA /* QuartzCore.framework */; };
 		C95292E418BB16B60059F06F /* MTZSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = C95292E318BB16B60059F06F /* MTZSwitch.m */; };
 		C95292E918BB16E40059F06F /* MTZSwitch.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C95292E818BB16E40059F06F /* MTZSwitch.xcassets */; };
@@ -43,6 +45,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C914B28F18D73A7300EC9C80 /* MTZPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MTZPickerView.h; path = UIPickerView/MTZPickerView.h; sourceTree = SOURCE_ROOT; };
+		C914B29018D73A7300EC9C80 /* MTZPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MTZPickerView.m; path = UIPickerView/MTZPickerView.m; sourceTree = SOURCE_ROOT; };
+		C914B29318D73EF400EC9C80 /* MTZDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MTZDatePicker.h; path = UIDatePicker/MTZDatePicker.h; sourceTree = SOURCE_ROOT; };
+		C914B29418D73EF400EC9C80 /* MTZDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MTZDatePicker.m; path = UIDatePicker/MTZDatePicker.m; sourceTree = SOURCE_ROOT; };
 		C93FCFB118B2EB1F00B898BA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		C95292E218BB16B60059F06F /* MTZSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MTZSwitch.h; path = UISwitch/MTZSwitch.h; sourceTree = SOURCE_ROOT; };
 		C95292E318BB16B60059F06F /* MTZSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MTZSwitch.m; path = UISwitch/MTZSwitch.m; sourceTree = SOURCE_ROOT; };
@@ -103,6 +109,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C914B29218D73A7700EC9C80 /* UIPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				C914B28F18D73A7300EC9C80 /* MTZPickerView.h */,
+				C914B29018D73A7300EC9C80 /* MTZPickerView.m */,
+			);
+			name = UIPickerView;
+			sourceTree = "<group>";
+		};
+		C914B29618D73EF700EC9C80 /* UIDatePicker */ = {
+			isa = PBXGroup;
+			children = (
+				C914B29318D73EF400EC9C80 /* MTZDatePicker.h */,
+				C914B29418D73EF400EC9C80 /* MTZDatePicker.m */,
+			);
+			name = UIDatePicker;
+			sourceTree = "<group>";
+		};
 		C95292E518BB16C10059F06F /* UISwitch */ = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +203,8 @@
 				C954564118B187BA00615C76 /* Parallax Perspective View */,
 				C954563018B1614900615C76 /* UISlider */,
 				C95292E518BB16C10059F06F /* UISwitch */,
+				C914B29218D73A7700EC9C80 /* UIPickerView */,
+				C914B29618D73EF700EC9C80 /* UIDatePicker */,
 				C97FB6CA18AD7BFC00800FA9 /* Images.xcassets */,
 				C97FB6B618AD7BFC00800FA9 /* Supporting Files */,
 			);
@@ -338,6 +364,8 @@
 				C97FB6C018AD7BFC00800FA9 /* MTZAppDelegate.m in Sources */,
 				C95292E418BB16B60059F06F /* MTZSwitch.m in Sources */,
 				C97FB6BC18AD7BFC00800FA9 /* main.m in Sources */,
+				C914B29518D73EF400EC9C80 /* MTZDatePicker.m in Sources */,
+				C914B29118D73A7300EC9C80 /* MTZPickerView.m in Sources */,
 				C95292EC18BB170A0059F06F /* MTZSwitchCatalog.m in Sources */,
 				C97FB6C918AD7BFC00800FA9 /* MTZViewController.m in Sources */,
 				C954564018B187B700615C76 /* MTZPerspectiveView.m in Sources */,
