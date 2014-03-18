@@ -8,8 +8,6 @@
 
 #import "MTZPerspectiveView.h"
 
-#define SHOULD_RASTERIZE
-
 @implementation MTZPerspectiveView
 
 #pragma mark - Initialization
