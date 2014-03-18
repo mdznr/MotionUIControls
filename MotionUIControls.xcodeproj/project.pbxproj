@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		C914B29118D73A7300EC9C80 /* MTZPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C914B29018D73A7300EC9C80 /* MTZPickerView.m */; };
 		C914B29518D73EF400EC9C80 /* MTZDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = C914B29418D73EF400EC9C80 /* MTZDatePicker.m */; };
+		C914B29818D7A1FC00EC9C80 /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C914B29718D7A1FC00EC9C80 /* Reveal.framework */; };
+		C914B29A18D7A21D00EC9C80 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C914B29918D7A21D00EC9C80 /* CFNetwork.framework */; };
 		C93FCFB218B2EB1F00B898BA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C93FCFB118B2EB1F00B898BA /* QuartzCore.framework */; };
 		C95292E418BB16B60059F06F /* MTZSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = C95292E318BB16B60059F06F /* MTZSwitch.m */; };
 		C95292E918BB16E40059F06F /* MTZSwitch.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C95292E818BB16E40059F06F /* MTZSwitch.xcassets */; };
@@ -49,6 +51,8 @@
 		C914B29018D73A7300EC9C80 /* MTZPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MTZPickerView.m; path = UIPickerView/MTZPickerView.m; sourceTree = SOURCE_ROOT; };
 		C914B29318D73EF400EC9C80 /* MTZDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MTZDatePicker.h; path = UIDatePicker/MTZDatePicker.h; sourceTree = SOURCE_ROOT; };
 		C914B29418D73EF400EC9C80 /* MTZDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MTZDatePicker.m; path = UIDatePicker/MTZDatePicker.m; sourceTree = SOURCE_ROOT; };
+		C914B29718D7A1FC00EC9C80 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reveal.framework; path = "../../../Downloads/Reveal.app/Contents/SharedSupport/iOS-Libraries/Reveal.framework"; sourceTree = "<group>"; };
+		C914B29918D7A21D00EC9C80 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		C93FCFB118B2EB1F00B898BA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		C95292E218BB16B60059F06F /* MTZSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MTZSwitch.h; path = UISwitch/MTZSwitch.h; sourceTree = SOURCE_ROOT; };
 		C95292E318BB16B60059F06F /* MTZSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MTZSwitch.m; path = UISwitch/MTZSwitch.m; sourceTree = SOURCE_ROOT; };
@@ -89,8 +93,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C914B29A18D7A21D00EC9C80 /* CFNetwork.framework in Frameworks */,
 				C93FCFB218B2EB1F00B898BA /* QuartzCore.framework in Frameworks */,
 				C97FB6B218AD7BFC00800FA9 /* CoreGraphics.framework in Frameworks */,
+				C914B29818D7A1FC00EC9C80 /* Reveal.framework in Frameworks */,
 				C97FB6B418AD7BFC00800FA9 /* UIKit.framework in Frameworks */,
 				C97FB6B018AD7BFC00800FA9 /* Foundation.framework in Frameworks */,
 			);
@@ -182,6 +188,8 @@
 		C97FB6AE18AD7BFC00800FA9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C914B29918D7A21D00EC9C80 /* CFNetwork.framework */,
+				C914B29718D7A1FC00EC9C80 /* Reveal.framework */,
 				C93FCFB118B2EB1F00B898BA /* QuartzCore.framework */,
 				C97FB6AF18AD7BFC00800FA9 /* Foundation.framework */,
 				C97FB6B118AD7BFC00800FA9 /* CoreGraphics.framework */,
@@ -503,9 +511,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/matt/Downloads/Reveal.app/Contents/SharedSupport/iOS-Libraries",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MotionUIControls/MotionUIControls-Prefix.pch";
 				INFOPLIST_FILE = "MotionUIControls/MotionUIControls-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = ./UISlider;
 				WRAPPER_EXTENSION = app;
@@ -517,9 +530,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/matt/Downloads/Reveal.app/Contents/SharedSupport/iOS-Libraries",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MotionUIControls/MotionUIControls-Prefix.pch";
 				INFOPLIST_FILE = "MotionUIControls/MotionUIControls-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = ./UISlider;
 				WRAPPER_EXTENSION = app;
