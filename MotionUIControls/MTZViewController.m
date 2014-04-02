@@ -23,9 +23,6 @@
 
 @property (weak, nonatomic) IBOutlet MTZPerspectiveView *perspectiveView;
 
-@property (weak, nonatomic) IBOutlet MTZDatePicker *datePicker;
-
-
 @end
 
 @implementation MTZViewController

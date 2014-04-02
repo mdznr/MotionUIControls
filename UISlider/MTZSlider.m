@@ -111,7 +111,7 @@ static NSString *thumbViewKeyPath = @"_thumbView";
 
 #ifdef THUMB_VIEW_PARALLAX
 /// The absolute maximum distance to translate the thumb view.
-static int thumbViewParallaxAbsoluteMax = 4;
+static int thumbViewParallaxAbsoluteMax = 6;
 #endif
 
 #ifdef NEAR_SHADOW_VIEW_PARALLAX
